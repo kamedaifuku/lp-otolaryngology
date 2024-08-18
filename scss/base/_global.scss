@@ -1,0 +1,42 @@
+@use "functions" as *;
+@use "mixin" as *;
+@use "colors_and_fonts" as *;
+
+// CSSによるサイトの基本設定
+// サイト全体に適用する設定・reset.cssを補完する設定を定義
+
+// カスタムプロパティ定義
+:root {
+  // PC版とスマホ版のベースサイズ
+  // PC版 最小値: SP版デザインへのブレークポイント,　最大値:コンテンツ幅  
+  --liquid-size-pc: #{clampWithPxToRem(8, 16, 768, 1440)};
+  // SP版 最小値: 表示を配慮する最小幅,　最大値: SP版デザインのアートボード幅 
+  --liquid-size-sp: #{clampWithPxToRem(12, 16, 320, 430)};
+
+  // サイト全体の基本サイズ、メディアクエリのブレークポイントは一致させること
+  --liquid-size-base: var(--liquid-size-pc);
+
+  @include mq(md) {
+    --liquid-size-base: var(--liquid-size-sp);
+  }
+}
+
+// 共通設定
+body {
+  background: $color-background;
+  font-size: pxToRem(16);
+  font-family: $font-jp-gothic;
+  color: $color-font;
+  line-height: 1.5;
+  letter-spacing: 0.05;
+}
+
+// safariのsummaryのアイコン消去
+summary::-webkit-details-marker {
+  display: none;
+}
+
+//　reCAPTCHA非表示
+.grecaptcha-badge {
+  visibility: hidden;
+}

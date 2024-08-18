@@ -1,0 +1,511 @@
+@use "../base/index" as *;
+// 汎用コンポーネント
+
+// ページタイトル。h1相当
+.c-page-title {
+  font-size: pxToRem(16);
+
+  // line-height: ;
+  // letter-spacing: ;
+}
+
+// セクションタイトル。h2相当 
+.c-section-title {
+  font-size: pxToRem(16);
+
+  // line-height: 
+  // letter-spacing: ;
+}
+
+// セクションの中のトピックのタイトル。h3相当
+.c-topic-title {
+  font-size: pxToRem(16);
+
+  // line-height: 
+  // letter-spacing: ;
+}
+
+// サイドメニュー等の見出し。h2相当。分類名などに使う。
+.c-aside-title {
+  font-size: pxToRem(16);
+
+  // line-height: 
+  // letter-spacing: ;
+}
+
+// ページ内の一般的なテキスト。pタグ相当。
+.c-text {
+  font-size: pxToRem(16);
+
+  // line-height: 
+  // letter-spacing: ;
+
+  // 強調箇所
+  &:where(.m-strong) {
+    font-size: pxToRem(16);
+    color: inherit;
+    // font-weight: 900;
+    font-style: normal;
+  }
+}
+
+// テキストの段落をまとめるフレックスボックス
+.c-flex-texts {
+  display: flex;
+  flex-flow: column;
+  gap: pxToRem();
+}
+
+// 1行に収まる短い文字列。
+.c-string {
+  font-size: pxToRem(16);
+
+  // line-height: 
+  // letter-spacing: ;
+}
+
+// コピーライト用。smallタグ相当
+.c-copyright {
+  font-size: pxToRem(12);
+
+  // line-height: 
+  // letter-spacing: ;
+}
+
+// ファーストビューに表示する画像。
+.c-main-visual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// ファーストビューに表示するキャッチコピー
+.c-catch-copy {
+  font-size: pxToRem(16);
+
+
+  &:where(.m-strong) {
+    font-size: pxToRem(16);
+    color: inherit;
+    // font-weight: 900;
+    font-style: normal;
+  }
+}
+
+// バナー画像を囲む要素。通常、aタグとimgタグを子要素に持つ。
+.c-banner-box {
+  // --foo: ;
+}
+
+// サムネイル画像を囲む要素。通常、imgタグを子要素に持つ。
+.c-thumbnail-box {
+  // --foo: ;
+}
+
+// 画像を格納する要素。figureもしくはdivに指定しimgを子要素に持つ。
+.c-image-box {
+  --foo: ;
+  // width: ;
+  // height: ;
+  // aspect-ratio: ;
+  // object-fit: ;
+
+  :where(&)>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 汎用的な画像設定
+.c-image {
+  --foo: ;
+  // width: ;
+  // height: ;
+  // aspect-ratio: ;
+  // object-fit: ;
+}
+
+// 汎用的なフレックスボックスのリスト。ulタグ相当。
+.c-flex-list {
+  display: flex;
+
+  &:where(.m-reverse-even) {
+    &:nth-child(even) {
+      flex-flow: row-reverse;
+    }
+  }
+
+  &:where(.m-reverse-odd) {
+    &:nth-child(odd) {
+      flex-flow: row-reverse;
+    }
+  }
+
+  &:where(.m-column) {
+    flex-flow: column;
+  }
+}
+
+// 順序のあるリストのフレックスボックス。olタグ相当
+.c-flex-ordered-list {
+  display: flex;
+  list-style: decimal;
+}
+
+// ナビゲーションメニュー用
+.c-nav-menu {
+  display: flex;
+  // gap: ;
+}
+
+// ドロップダウンメニュー用
+.c-drop-down-menu {
+  display: flex;
+  flex-flow: column;
+  // gap: ;
+}
+
+// テキストタイプのリンクに使用
+.c-text-link {
+  --foo: ;
+
+  &:hover {
+    --foo: ;
+  }
+
+  &:active {
+    --foo: ;
+  }
+}
+
+// 下線付きリンクに使用
+.c-underlined-link {
+  --foo: ;
+  // text-decoration: underline;
+
+  &:hover {
+    --foo: ;
+  }
+
+  &:active {
+    --foo: ;
+  }
+}
+
+// 箱型のリンクに使用
+.c-box-link {
+  display: grid;
+  place-items: center;
+
+  &:hover {
+    --foo: ;
+  }
+
+  &:active {
+    --foo: ;
+  }
+}
+
+// サイトロゴ用。h1もしくはdivタグに指定。
+.c-site-logo {
+  --foo: ;
+}
+
+// サイト内のスタンダードなボタン。buttonタグ、aタグ
+.c-button {
+  display: grid;
+  place-items: center;
+  // padding: ;
+  // border-radius: ;
+  border: pxToRem(2) solid myHsl(--h-s, --l-3);
+  --h-s: var(--h-s-base);
+  background: myHsl(--h-s, --l-3);
+  color: myHsl(--h-s, --l-8);
+  // transition: all 0.5s;
+
+  &:hover {
+    background: myHsl(--h-s, --l-6);
+    color: myHsl(--h-s, --l-9);
+  }
+
+  &:active {
+    background: myHsl(--h-s, --l-5);
+    color: myHsl(--h-s, --l-8);
+  }
+}
+
+// 丸型のボタン
+.c-circle-button {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1/ 1;
+  // padding: pxToRem();
+  border-radius: 50%;
+  --h-s: var(--h-s-base);
+  border: pxToRem(2) solid myHsl(--h-s, --l-3);
+  background: myHsl(--h-s, --l-3);
+  color: myHsl(--h-s, --l-8);
+  // transition: all 0.5s;
+
+  &:hover {
+    background: myHsl(--h-s, --l-6);
+    color: myHsl(--h-s, --l-9);
+  }
+
+  &:active {
+    background: myHsl(--h-s, --l-5);
+    color: myHsl(--h-s, --l-8);
+  }
+}
+
+// アイコン画像のボタン。buttonタグに指定。
+.c-icon-button {
+  --foo: ;
+
+  &:hover {
+    --foo: ;
+  }
+
+  &:active {
+    --foo: ;
+  }
+
+  &:has(span) {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  :where(&)>img {
+    --foo: ;
+  }
+
+  :where(&)>span {
+    --foo: ;
+  }
+}
+
+// ハンバーガーメニュー用。アイコン画像のボタンの亜種。
+.c-hamburger-button {
+  --foo: ;
+
+  &:hover {
+    --foo: ;
+  }
+
+  &:active {
+    --foo: ;
+  }
+
+  &:has(span) {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  :where(&)>img {
+    --foo: ;
+  }
+
+  :where(&)>span {
+    --foo: ;
+  }
+}
+
+// 汎用的な子要素を一つのセルにまとめるグリッド
+.c-one-cell-grid {
+  display: grid;
+
+  :where(&)>* {
+    grid-area: 1/ 1/ 2/ 2;
+  }
+}
+
+// カードタイプのコンポーネント群の配置をまとめるグリッド。
+.c-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: pxToRem();
+  grid-template-areas:
+    "title"
+    "img"
+    "desc";
+
+  &>.c-card-grid__title {
+    grid-area: title;
+  }
+
+  &>.c-card-grid__image {
+    grid-area: img;
+  }
+
+  &>.c-card-grid__desc {
+    grid-area: desc;
+  }
+}
+
+// フォームの入力欄。 文字列を入力するinput、textarea等
+.c-input-box {
+  padding: pxToRem();
+  border-radius: pxToRem();
+  // border: ;
+  background: myHsl(--h-s, --l, );
+
+  transition: all;
+
+  ::placeholder {}
+
+  &:not(:read-only, :disabled):hover {
+    --foo: ;
+  }
+
+  &:focus-visible {
+    --foo: ;
+  }
+
+  &:invalid {
+    --foo: ;
+  }
+
+  &:valid {
+    --foo: ;
+  }
+
+  &:disabled {
+    --foo: ;
+  }
+}
+
+// input要素のラベル
+.c-input-label {
+  display: flex;
+  align-items: center;
+  gap: pxToRem();
+
+  &::before {
+    content: "任意";
+    flex-shrink: 0;
+    padding: pxToRem();
+    font-size: pxToRem();
+    border-radius: pxToRem();
+    --h-s: ;
+    color: myHsl(--h-s, --l);
+    background-color: myHsl(--h-s, --l);
+  }
+
+  :has(:required)>&::before {
+    content: "必須";
+    --h-s: ;
+  }
+}
+
+// チェックボックス一式
+.c-checkbox {
+  display: flex;
+  align-items: center;
+  gap: pxToRem();
+
+  &>input {
+    --foo: ;
+  }
+
+  &>label {
+    --foo: ;
+
+    &:hover {
+      --foo: ;
+    }
+  }
+
+  &:has(:checked)>label {
+    --foo: ;
+  }
+}
+
+// ラジオボタン一式
+.c-radio {
+  display: flex;
+  align-items: center;
+  gap: pxToRem();
+
+  &>input {
+    --foo: ;
+  }
+
+  &>label {
+    --foo: ;
+
+    &:hover {
+      --foo: ;
+    }
+  }
+
+  &:has(:checked)>label {
+    --foo: ;
+  }
+}
+
+// 自作チェックボックス
+.c-custom-checkbox {
+  display: grid;
+
+  &>* {
+    grid-area: 1/ 1/ 2/ 2;
+  }
+
+  &>input {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &>label {
+    display: flex;
+    align-items: center;
+    gap: pxToRem();
+    z-index: 1;
+
+    &::before {
+      content: "";
+    }
+
+    &:hover {
+      --foo: ;
+    }
+  }
+
+  &:has(:checked)>label {
+    &::before {
+      content: "";
+    }
+  }
+}
+
+// 自作ラジオボタン
+.c-custom-radio {
+  display: grid;
+
+  &>* {
+    grid-area: 1/ 1/ 2/ 2;
+  }
+
+  &>input {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &>label {
+    display: grid;
+    align-items: center;
+    gap: pxToRem();
+    z-index: 1;
+
+    &:hover {
+      --foo: ;
+    }
+  }
+
+  &:has(:checked)>label {
+    --foo: ;
+  }
+}

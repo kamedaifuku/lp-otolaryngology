@@ -1,0 +1,6 @@
+// componentのSCSSを統括するファイル
+@use "component" as component;
+@use "slider" as slider;
+
+@forward "component";
+@forward "slider";

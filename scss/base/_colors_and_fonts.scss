@@ -1,0 +1,23 @@
+// 変数（フォント・色）定義
+// フォント定義
+$font-jp-mincho: serif;
+$font-jp-gothic: san-serif;
+$font-jp-decorative: san-serif;
+$font-en-serif: serif;
+$font-en-sanserif: san-serif;
+$font-en-decorative: san-serif;
+$font-awesome: 'Font Awesome 6 Free';
+
+// 色定義
+$color-black: hsl(0 0% 10%);
+$color-white: hsl(0 0% 96%);
+
+$color-base: hsl(0 0% 0%);
+$color-primary: hsl(0 0% 0%);
+$color-secondary: hsl(0 0% 0%);
+$color-accent: hsl(0 0% 0%);
+
+$color-red: #fe1036;
+
+$color-font: $color-black;
+$color-background: $color-white;
