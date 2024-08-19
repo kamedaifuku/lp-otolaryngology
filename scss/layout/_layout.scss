@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
+    "header"
     "main"
     "footer";
 
@@ -27,10 +28,7 @@
 }
 
 .l-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 20;
+  grid-area: header;
 }
 
 .l-main {

@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-:where([hidden]:not([hidden="until-found"])) {
+:where([hidden]:not([hidden=until-found])) {
   display: none !important;
 }
 
@@ -20,8 +20,8 @@
   -webkit-text-size-adjust: none;
   color-scheme: dark light;
   -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -49,7 +49,7 @@
   resize: block;
 }
 
-:where(button, label, select, summary, [role="button"], [role="option"]) {
+:where(button, label, select, summary, [role=button], [role=option]) {
   cursor: pointer;
 }
 
@@ -108,7 +108,7 @@
 
 :where(.visually-hidden:not(:focus-within, :active)) {
   -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
   height: 1px !important;
   width: 1px !important;
   overflow: hidden !important;
@@ -151,7 +151,7 @@ summary::-webkit-details-marker {
 .l-body-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas: "main" "footer";
+  grid-template-areas: "header" "main" "footer";
   min-height: 100vh;
   overflow: clip;
 }
@@ -167,10 +167,7 @@ summary::-webkit-details-marker {
 }
 
 .l-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 20;
+  grid-area: header;
 }
 
 .l-main {
@@ -266,7 +263,7 @@ summary::-webkit-details-marker {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .c-catch-copy {
@@ -285,7 +282,7 @@ summary::-webkit-details-marker {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .c-image {
