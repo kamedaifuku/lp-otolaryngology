@@ -68,11 +68,12 @@
   ---------------------------------------------------------
   */
 
-/* first view
+/* ファーストビュー
   --------------------------------------------------------- */
 .p-fv {
   display: flex;
   justify-content: center;
+  padding-bottom: liquid(32);
 }
 
 .p-fv__inner {
@@ -179,7 +180,7 @@
   height: liquid(66);
   border-radius: liquid(10);
   overflow: clip;
-  background: #fff;
+  background: $c-white;
   box-shadow: 0 0 liquid(7) rgb(0 0 0/0.3);
 }
 
@@ -187,7 +188,7 @@
   display: flex;
   align-items: center;
   width: 26%;
-  color: #fff;
+  color: $c-white;
   padding-left: liquid(18);
   font-size: liquid(18);
   font-weight: 700;
@@ -233,20 +234,374 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  gap: liquid(6);
+  gap: liquid(5);
   padding-top: liquid(14);
   padding-inline: liquid(5);
   width: 100%;
 }
 
-/* 
+/* お悩み
   --------------------------------------------------------- */
+.p-concerns {
+  display: flex;
+  justify-content: center;
+  padding-block: liquid(36) liquid(41);
+  background: url(../images/bg-concerns.webp) center/cover;
+}
 
-/* 
-  --------------------------------------------------------- */
+.p-concerns__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
 
-/* 
+.p-concerns__title {
+  display: flex;
+  flex-flow: column;
+  gap: liquid(13);
+  align-items: center;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.p-concerns__em-decoration {
+  position: relative;
+  font-size: 1.5em;
+  background: radial-gradient(circle at center, $c-primary 20%, transparent 20%)
+    top right/ 1em 0.3em repeat-x;
+  padding-top: 0.1em;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+    width: 0.5em;
+    aspect-ratio: 14/ 17;
+    background: url(../images/icon-concerns.svg) center/cover;
+  }
+}
+
+.p-concerns__contents {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  padding-top: liquid(36);
+}
+
+.p-concerns__list {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  gap: liquid(21);
+}
+
+.p-concerns__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-inline: liquid(40) 0;
+  border-radius: liquid(8);
+  background: $c-white;
+  color: $c-primary;
+  font-weight: 700;
+
+  &::before {
+    content: "";
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 0;
+    width: liquid(29);
+    aspect-ratio: 1/ 1;
+    border-radius: 50%;
+    color: $c-white;
+    background: url(../images/icon-check.svg) center/cover;
+  }
+}
+
+.p-concern__img {
+  display: grid;
+  place-items: center;
+  width: liquid(312);
+  height: liquid(312);
+  margin-top: liquid(-12);
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.p-concern__caution {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: liquid(12);
+  font-weight: 500;
+  padding-top: liquid(14);
+  text-align: center;
+
+  & .m-small {
+    font-size: 0.875em;
+  }
+
+  & .m-decoration {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: $c-primary;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 60%;
+      left: 94%;
+      width: 1em;
+      aspect-ratio: 22/ 21;
+      background: url(../images/icon-surprise.svg) center/cover;
+    }
+  }
+}
+
+/* CTA
   --------------------------------------------------------- */
+.p-cta {
+  display: flex;
+  justify-content: center;
+  background: url(../images/bg-cta.webp) center/cover;
+}
+
+.p-cta__inner {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  width: var(--contents);
+  padding-block: liquid(32);
+  padding-inline: liquid(3);
+}
+
+.p-cta__into-text {
+  position: absolute;
+  top: liquid(-16);
+  width: liquid(160);
+  aspect-ratio: 160/ 44;
+  padding-top: liquid(1);
+  background: linear-gradient(to bottom, #76c4eedd 17.49%, #449dd0dd 80.19%);
+  color: $c-white;
+  text-align: center;
+  font-size: liquid(12);
+  line-height: 1.3;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.p-cta__box {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: liquid(21);
+  background: $c-white;
+  padding: liquid(43) liquid(21);
+  color: $c-primary;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    display: inline-block;
+    inset: liquid(8);
+    border-radius: liquid(13);
+    border: liquid(3) solid currentColor;
+  }
+}
+
+.p-cta__action-text {
+  display: flex;
+  justify-content: center;
+}
+
+.p-cta-links {
+  display: flex;
+  flex-flow: column;
+  gap: liquid(24);
+  padding-top: liquid(14);
+  padding-inline: liquid(8);
+}
+/* 睡眠時無呼吸症候群について
+  --------------------------------------------------------- */
+.p-sleep-apnea {
+  display: flex;
+  justify-content: center;
+  padding-block: liquid(35);
+}
+
+.p-sleep-apnea__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
+
+.p-sleep-apnea__about {
+  display: flex;
+  flex-flow: column;
+  gap: liquid(16);
+  padding-block: liquid(23) liquid(34);
+}
+
+.p-sleep-apnea__img {
+  width: 100%;
+  aspect-ratio: 345/ 230;
+  border-radius: liquid(10);
+}
+
+.p-sleep-apnea__texts {
+  font-size: liquid(18);
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+}
+
+.p-sleep-apnea__caution {
+  position: relative;
+  font-size: liquid(24);
+  font-weight: 700;
+  padding-bottom: liquid(24);
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0.91em;
+    top: liquid(-13);
+    right: liquid(58);
+    aspect-ratio: 22/23;
+    background: url(../images/icon-bad.svg) center/cover;
+  }
+}
+
+.p-sleep-apnea__risk {
+  display: flex;
+  flex-flow: column;
+  gap: liquid(49);
+  width: 100%;
+  padding-block: liquid(43);
+}
+
+.p-risk-card {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: liquid(10);
+  overflow: clip;
+  border-radius: liquid(8);
+  border: 1px solid $c-light-gray-2;
+  background: $c-secondary;
+}
+
+.p-risk-card__title {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: liquid(45);
+  gap: liquid(8);
+  font-size: liquid(20);
+  font-weight: 700;
+  background: $c-primary;
+  color: $c-white;
+
+  &::after {
+    content: "";
+    aspect-ratio: 1/1;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.m-complications::after {
+    width: liquid(26);
+    background-image: url(../images/icon-health-risk.svg);
+  }
+
+  &.m-accident::after {
+    width: liquid(34);
+    background-image: url(../images/icon-accident-risk.svg);
+  }
+}
+
+.p-risk-card__text {
+  padding-top: liquid(16);
+  font-size: liquid(20);
+  font-weight: 500;
+}
+
+.p-risk-card__incidence {
+  font-size: liquid(20);
+  font-weight: 700;
+  padding-top: liquid(8);
+}
+
+.p-risk-card__number {
+  font-size: 2.3em;
+}
+
+.p-risk-card__illustration {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  padding-top: liquid(10);
+  padding-inline: liquid(9);
+}
+
+.p-risk-card__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: liquid(16);
+  width: 100%;
+}
+
+.p-risk-card__etc {
+  align-self: flex-end;
+  font-size: liquid(14);
+}
+
+.p-sleep-apnea__references {
+  padding-top: liquid(11);
+  padding-left: liquid(8);
+  line-height: 1.25;
+
+  & > small {
+    font-size: liquid(11);
+  }
+}
+
+.p-sleep-apnea__conclusion {
+  text-align: center;
+  padding-bottom: liquid(18);
+
+  & > .m-large {
+    font-size: 1.25em;
+  }
+}
+
+.p-sleep-apnea__cured-img {
+  width: 100%;
+  aspect-ratio: 345/ 309;
+  border-radius: liquid(10);
+  overflow: clip;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
 
 /* 
   --------------------------------------------------------- */
@@ -259,130 +614,7 @@
 /* 
   --------------------------------------------------------- */
 
-.c-box-text {
-  display: inline-grid;
-  place-items: center;
-  padding: 2px;
-  border: 1px solid currentColor;
-  color: $c-primary;
-  background: #fff;
-  font-size: 1.5em;
-  line-height: 1;
-}
-
-.c-em-decoration__concern {
-  font-size: 1.5em;
-  background: radial-gradient(circle at center, $c-primary 20%, transparent 20%)
-    top right/ 1em 0.3em repeat-x;
-  padding-top: 0.1em; /* 縦方向の位置調整 */
-}
-
-.c-checked-item {
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-inline: 32px 0;
-  border-radius: 8px;
-  background: #fff;
-  color: $c-primary;
-  font-weight: 700;
-
-  &::before {
-    content: "✔";
-    display: grid;
-    place-items: center;
-    position: absolute;
-    left: 0;
-    width: 29px;
-    aspect-ratio: 1/ 1;
-    border-radius: 50%;
-    color: #fff;
-    background: $c-primary;
-  }
-}
-
 /* Component***
     --------------------------------------------------------- */
 /*汎用コンポーネント
    *********************/
-
-.p-concerns {
-  padding-block: 5rem;
-  padding-inline: var(--side-margin);
-}
-
-.p-concerns__title {
-  display: flex;
-  flex-flow: column;
-  gap: 10px;
-  align-items: center;
-  font-size: 1rem;
-}
-
-.p-concern__contents {
-  display: flex;
-  flex-flow: column;
-  background: #ddd;
-}
-
-.p-concern__list {
-  display: flex;
-  flex-flow: column;
-  gap: 19px;
-}
-
-/* cta */
-.p-cta {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  padding: 32px 18px;
-  background: $c-accent-02;
-}
-
-.p-cta__into-text {
-  position: absolute;
-  top: -16px;
-  width: 160px;
-  aspect-ratio: 160/ 44;
-  padding-top: 2px;
-  background: linear-gradient(to bottom, #98d7ffaa 17.49%, #449dd0aa 80.19%);
-  color: #fff;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.3;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-}
-
-.p-cta__box {
-  position: relative;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 21px;
-  background: #fff;
-  padding: 43px 21px;
-  color: $c-primary;
-
-  &::before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    display: inline-block;
-    inset: 8px;
-    border-radius: 13px;
-    border: 2px solid currentColor;
-  }
-}
-
-.p-cta__action-text {
-  display: flex;
-  justify-content: center;
-}
-
-.p-cta-links {
-  display: flex;
-  flex-flow: column;
-  gap: 24px;
-  padding-top: 14px;
-}

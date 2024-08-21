@@ -35,9 +35,8 @@ body {
   background: $c-white;
   font-size: pxToRem(16);
   font-family: $font-jp;
-  color: $c-black;
+  color: $c-dark-gray-1;
   line-height: 1.5;
-  letter-spacing: 0.05;
 }
 
 // details summaryのマーカーを消す

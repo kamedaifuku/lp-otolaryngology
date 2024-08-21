@@ -1,5 +1,17 @@
 @use "../base/index" as *;
 // 汎用コンポーネント
+// 汎用タイトル
+.c-common-title {
+  font-size: liquid(24);
+  font-weight: 700;
+}
+
+// 汎用強調
+.c-em-primary {
+  font-weight: 700;
+  color: $c-primary;
+}
+
 // リンクボタン
 .c-link-button {
   display: flex;
@@ -10,7 +22,7 @@
   text-decoration: none;
   width: 100%;
   height: 100%;
-  line-height: 1;
+  line-height: 1.5;
 
   // 色指定
   &.m-reserve {
@@ -21,11 +33,13 @@
     background: $c-line;
   }
 
-  // アイコン有
+  // アイコン有基本
   &.m-has-icon {
     justify-content: space-between;
-    padding-inline: liquid(24) liquid(13);
     height: liquid(52);
+    padding-inline: liquid(24) liquid(13);
+    font-size: liquid(19);
+    font-weight: 700;
 
     &::before,
     &::after {
@@ -60,11 +74,12 @@
     gap: liquid(4);
     font-size: liquid(14);
     padding-bottom: liquid(8);
+    line-height: 1;
   }
 
   // fv用
   &.m-fv {
-    height: liquid(66);
+    height: liquid(63);
     font-size: liquid(24);
     font-weight: 700;
     padding-inline: liquid(28) liquid(20);
@@ -84,6 +99,7 @@
   display: flex;
   position: relative;
   align-items: baseline;
+  justify-content: center;
 
   &::before,
   &::after {
@@ -117,6 +133,7 @@
   &.m-fv {
     gap: liquid(5);
     font-weight: 700;
+    font-size: liquid(17);
 
     &::before,
     &::after {
@@ -130,13 +147,36 @@
       background-image: url(../images/icon-slash-s-right.svg);
     }
   }
+
+  // CTAの販促用テキスト
+  &.m-cta {
+    gap: liquid(3);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: liquid(20);
+      aspect-ratio: 20/ 30;
+    }
+    &::before {
+      left: 0;
+      background-image: url(../images/icon-slash-w02-left.svg);
+    }
+    &::after {
+      right: liquid(-2);
+      background-image: url(../images/icon-slash-w02-right.svg);
+    }
+  }
 }
 
 /* 丸アイコン */
 .c-rounded-icon {
   display: grid;
   place-items: center;
-  grid-template-rows: liquid(30) liquid(40);
+  grid-template-rows: 30% 40%;
+  gap: 10%;
   width: min(100%, liquid(100));
   aspect-ratio: 1/ 1;
   border-radius: 50%;
@@ -158,6 +198,18 @@
     background-size: cover;
   }
 
+  // 中サイズ {
+  &.m-middle {
+    gap: 10%;
+    width: min(100%, liquid(84));
+    padding-top: liquid(14);
+
+    &::before {
+      width: liquid(28);
+    }
+  }
+
+  // fvの特徴
   &.m-features-01::before {
     background-image: url(../images/icon-features-01.svg);
   }
@@ -167,6 +219,29 @@
   &.m-features-03::before {
     background-image: url(../images/icon-features-03.svg);
   }
+
+  // 病気リスク
+  &.m-complications-01::before {
+    background-image: url(../images/icon-complications-01.webp);
+  }
+  &.m-complications-02::before {
+    background-image: url(../images/icon-complications-02.webp);
+  }
+  &.m-complications-03::before {
+    background-image: url(../images/icon-complications-03.webp);
+  }
+}
+
+// 格子状のテキスト
+.c-box-text {
+  display: inline-grid;
+  place-items: center;
+  padding: liquid(2);
+  border: liquid(1) solid currentColor;
+  color: $c-primary;
+  background: $c-white;
+  font-size: liquid(24);
+  line-height: 1;
 }
 
 // アコーディオンメニュー制御用
@@ -175,7 +250,7 @@
   width: 100%;
   padding: 0;
   border-radius: 0.625rem;
-  background: #fff;
+  background: $c-white;
   box-shadow: 0 0 4px rgb(0 0 0/0.25);
   overflow: clip;
   color: #449dd0;
@@ -187,7 +262,7 @@
   align-items: center;
   padding: 1rem;
   font-weight: 700;
-  background: #fff;
+  background: $c-white;
   font-size: 1.25rem;
   transition: background 0.25s linear, color 0.25s linear;
 
@@ -207,7 +282,7 @@
   }
 
   .c-accordion.is-open & {
-    color: #fff;
+    color: $c-white;
     background: #449dd0;
   }
 

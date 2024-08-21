@@ -113,26 +113,27 @@
       <!-- end fv -->
       <!-- concerns -->
       <section class="p-concerns">
-        <div class="p-concern__inner">
+        <div class="p-concerns__inner">
           <h2 class="p-concerns__title">
             <span><span class="c-box-text">睡</span><span class="c-box-text">眠</span>で</span>
-            <span>こんな<em class="c-em-decoration__concern">お悩み</em>ありませんか？</span>
+            <span>こんな<em class="p-concerns__em-decoration">お悩み</em>ありませんか？</span>
           </h2>
-          <div p-concern__contents>
-            <ul class="p-concern__list">
-              <li class="c-checked-item">いびきをかき、睡眠中に息が止まる...</li>
-              <li class="c-checked-item">よく眠れず、疲れが残っている...</li>
-              <li class="c-checked-item">旅行や外泊が満足に楽しめない...</li>
-              <li class="c-checked-item">家族にいびきで、迷惑をかける...</li>
-              <li class="c-checked-item">日中の眠気で、集中力が続かない...</li>
+          <div class="p-concerns__contents">
+            <ul class="p-concerns__list">
+              <li class="p-concerns__item">いびきをかき、睡眠中に息が止まる...</li>
+              <li class="p-concerns__item">よく眠れず、疲れが残っている...</li>
+              <li class="p-concerns__item">旅行や外泊が満足に楽しめない...</li>
+              <li class="p-concerns__item">家族にいびきで、迷惑をかける...</li>
+              <li class="p-concerns__item">日中の眠気で、集中力が続かない...</li>
             </ul>
-            <img src="./images/img-lack-of-sleep.webp" alt="寝不足のイメージ" loading="lazy" width="287" height="287"
-              class="p-concern__img">
+            <div class="p-concern__img">
+              <img src="./images/img-lack-of-sleep.webp" alt="寝不足のイメージ" loading="lazy" width="320" height="320">
+            </div>
           </div>
-          <div p-concern__caution>
-            <p class="c-caution-text">一つでも思い当たる方は・・・</p>
-            <p class="c-caution-text">
-              <em class="c-em-decoration__caution c-stroke-white">睡眠時無呼吸症候群</em>の<br>
+          <div class="p-concern__caution">
+            <p class="m-small">一つでも思い当たる方は・・・</p>
+            <p>
+              <em class="m-decoration c-stroke-white">睡眠時無呼吸症候群</em>の<br>
               可能性があります！
             </p>
           </div>
@@ -140,10 +141,10 @@
       </section>
       <!-- end concerns -->
       <section class="p-cta">
-        <div class="cta__inner">
+        <div class="p-cta__inner">
           <p class="p-cta__into-text">でも<br>大丈夫!</p>
           <div class="p-cta__box">
-            <p class="p-cta__action-text">あなたにあった治療を提供します!</p>
+            <p class="c-action-text m-cta">あなたにあった治療を提供します!</p>
             <div class="p-cta-links">
               <a href="#" class="c-link-button m-consult m-has-icon">LINEから相談する</a>
               <a href="#" class="c-link-button m-reserve m-has-icon">LINEから予約する</a>
@@ -166,8 +167,7 @@
           </div>
           <h3 class="p-sleep-apnea__caution">放置すると・・・</h3>
           <div class="p-sleep-apnea__texts">
-            <p>呼吸が止まることで血液中の酸素濃度が低下すると、<em class="c-em-primary">心臓や脳の血管に負担</em>がかかる。</p>
-            <p></p>
+            <p>呼吸が止まることで血液中の酸素濃度が低下すると、<em class="c-em-primary">心臓や脳の血管に負担</em>がかかります。</p>
           </div>
           <ul class="p-sleep-apnea__risk">
             <li>
@@ -176,14 +176,15 @@
                 <p class="p-risk-card__text">夜間に突然死するリスクは<br>健常者の</p>
                 <p class="p-risk-card__incidence">約<em class="p-risk-card__number">2.5</em>倍</p>
                 <div class="p-risk-card__illustration">
-                  <ul class="p-risk-isons">
-                    <li class="c-rounded-icon m-complications-01"><span>高血圧</span></li>
-                    <li class="c-rounded-icon m-complications-02"><span>脳卒中</span></li>
-                    <li class="c-rounded-icon m-complications-03"><span>心筋梗塞</span></li>
+                  <ul class="p-risk-card__icons">
+                    <li class="c-rounded-icon m-middle m-complications-01"><span>高血圧</span></li>
+                    <li class="c-rounded-icon m-middle m-complications-02"><span>脳卒中</span></li>
+                    <li class="c-rounded-icon m-middle m-complications-03"><span>心筋梗塞</span></li>
                   </ul>
+                  <p class="p-risk-card__etc">なども・・・</p>
                 </div>
               </div>
-              <p class="c-references"><small>
+              <p class="p-sleep-apnea__references"><small>
                   (参考文献)<br>
                   Day–Night Pattern of Sudden Death in Obstructive Sleep Apnea
                 </small></p>
@@ -197,7 +198,7 @@
                   <img src="./images/img-risk-graph.webp" loading="lazy" alt="交通事故の発生リスクの比較図" width="244" height="99">
                 </div>
               </div>
-              <p class="c-references"><small>
+              <p class="p-sleep-apnea__references"><small>
                   (参考文献)<br>
                   「睡眠時無呼吸症候群(ＳＡＳ)を正しく知ろう」リーフレット
                 </small></p>
@@ -205,7 +206,7 @@
           </ul>
           <p class="p-sleep-apnea__conclusion">
             だからあなたに合った<br>
-            <em class="c-em-primary-large">早期の治療をおすすめします!</em>
+            <em class="c-em-primary m-large">早期の治療をおすすめします!</em>
           </p>
           <div class="p-sleep-apnea__cured-img">
             <img src="./images/img-recovery.webp" loading="lazy" alt="気持ちの良い目覚めのイメージ" width="309" height="345">
@@ -357,7 +358,7 @@
       <section class="p-cta">
         <div class="p-cta__inner">
           <div class="p-cta__box">
-            <p class="p-cta__action-text">あなたにあった治療を提供します!</p>
+            <p class="c-action-text m-cta">あなたにあった治療を提供します!</p>
             <div class="p-cta-links">
               <a href="#" class="c-link-button m-consult m-has-icon">LINEから相談する</a>
               <a href="#" class="c-link-button m-reserve m-has-icon">LINEから予約する</a>
@@ -531,7 +532,7 @@
       <section class="p-cta">
         <div class="p-cta__inner">
           <div class="p-cta__box">
-            <p class="p-cta__action-text">あなたにあった治療を提供します!</p>
+            <p class="c-action-text m-cta">あなたにあった治療を提供します!</p>
             <div class="p-cta-links">
               <a href="#" class="c-link-button m-consult m-has-icon">LINEから相談する</a>
               <a href="#" class="c-link-button m-reserve m-has-icon">LINEから予約する</a>
