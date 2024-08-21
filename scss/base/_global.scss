@@ -7,36 +7,49 @@
 
 // カスタムプロパティ定義
 :root {
-  // PC版とスマホ版のベースサイズ
-  // PC版 最小値: SP版デザインへのブレークポイント,　最大値:コンテンツ幅  
-  --liquid-size-pc: #{clampWithPxToRem(8, 16, 768, 1440)};
-  // SP版 最小値: 表示を配慮する最小幅,　最大値: SP版デザインのアートボード幅 
-  --liquid-size-sp: #{clampWithPxToRem(12, 16, 320, 430)};
+  // コンテンツ幅
+  --contents-pc: min(100%, #{pxToRem(1100)});
+  --contents-sp: min(100%, #{pxToRem(345)});
+
+  //左右余白
+  --side-space: #{pxToRem(15)};
+
+  // PC版とスマホ版のベース文字サイズ
+  // PC版 最小値: SP版デザインへのブレークポイント,　最大値:コンテンツ幅
+  --liquid-size-pc: #{clampWithPxToRem(11, 16, 768, 1100)};
+  // SP版 最小値: 表示を配慮する最小幅,　最大値: SP版デザインのアートボード幅
+  --liquid-size-sp: #{clampWithPxToRem(12, 16, 300, 375)};
 
   // サイト全体の基本サイズ、メディアクエリのブレークポイントは一致させること
-  --liquid-size-base: var(--liquid-size-pc);
+  --liquid-size: var(--liquid-size-sp);
+  --contents: var(--contents-sp);
 
-  @include mq(md) {
-    --liquid-size-base: var(--liquid-size-sp);
+  @include mq(pc) {
+    --liquid-size: var(--liquid-size-pc);
+    --contents: var(--contents-pc);
   }
 }
 
 // 共通設定
 body {
-  background: $color-background;
+  background: $c-white;
   font-size: pxToRem(16);
-  font-family: $font-jp-gothic;
-  color: $color-font;
+  font-family: $font-jp;
+  color: $c-black;
   line-height: 1.5;
   letter-spacing: 0.05;
 }
 
-// safariのsummaryのアイコン消去
+// details summaryのマーカーを消す
+summary {
+  list-style: none;
+}
+
 summary::-webkit-details-marker {
   display: none;
 }
 
-//　reCAPTCHA非表示
-.grecaptcha-badge {
-  visibility: hidden;
+// em基本設定
+em {
+  font-style: normal;
 }

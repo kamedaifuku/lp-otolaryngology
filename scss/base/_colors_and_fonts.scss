@@ -1,23 +1,24 @@
 // 変数（フォント・色）定義
 // フォント定義
-$font-jp-mincho: serif;
-$font-jp-gothic: san-serif;
-$font-jp-decorative: san-serif;
-$font-en-serif: serif;
-$font-en-sanserif: san-serif;
-$font-en-decorative: san-serif;
-$font-awesome: 'Font Awesome 6 Free';
+$font-jp: "Noto Sans JP", sans-serif;
+$font-en: Arial, Helvetica, sans-serif;
 
 // 色定義
-$color-black: hsl(0 0% 10%);
-$color-white: hsl(0 0% 96%);
+$c-black: #000;
+$c-white: #fff;
 
-$color-base: hsl(0 0% 0%);
-$color-primary: hsl(0 0% 0%);
-$color-secondary: hsl(0 0% 0%);
-$color-accent: hsl(0 0% 0%);
+$c-light-gray-0: #eee;
+$c-light-gray-1: #ddd;
+$c-light-gray-2: #d8d8d8;
+$c-light-gray-3: #c6c6c6;
+$c-light-gray-4: #b5b5b5;
+$c-dark-gray-1: #333;
+$c-dark-gray-2: #5c5c5c;
 
-$color-red: #fe1036;
+$c-primary: #449dd0;
+$c-primary-a90: rgb(68 157 208/0.9);
+$c-secondary: #eef6ff;
+$c-accent-01: #177cb5;
+$c-accent-02: #4bb1ee;
 
-$color-font: $color-black;
-$color-background: $color-white;
+$c-line: #06c755;

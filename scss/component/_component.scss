@@ -1,511 +1,238 @@
 @use "../base/index" as *;
 // 汎用コンポーネント
-
-// ページタイトル。h1相当
-.c-page-title {
-  font-size: pxToRem(16);
-
-  // line-height: ;
-  // letter-spacing: ;
-}
-
-// セクションタイトル。h2相当 
-.c-section-title {
-  font-size: pxToRem(16);
-
-  // line-height: 
-  // letter-spacing: ;
-}
-
-// セクションの中のトピックのタイトル。h3相当
-.c-topic-title {
-  font-size: pxToRem(16);
-
-  // line-height: 
-  // letter-spacing: ;
-}
-
-// サイドメニュー等の見出し。h2相当。分類名などに使う。
-.c-aside-title {
-  font-size: pxToRem(16);
-
-  // line-height: 
-  // letter-spacing: ;
-}
-
-// ページ内の一般的なテキスト。pタグ相当。
-.c-text {
-  font-size: pxToRem(16);
-
-  // line-height: 
-  // letter-spacing: ;
-
-  // 強調箇所
-  &:where(.m-strong) {
-    font-size: pxToRem(16);
-    color: inherit;
-    // font-weight: 900;
-    font-style: normal;
-  }
-}
-
-// テキストの段落をまとめるフレックスボックス
-.c-flex-texts {
+// リンクボタン
+.c-link-button {
   display: flex;
-  flex-flow: column;
-  gap: pxToRem();
-}
-
-// 1行に収まる短い文字列。
-.c-string {
-  font-size: pxToRem(16);
-
-  // line-height: 
-  // letter-spacing: ;
-}
-
-// コピーライト用。smallタグ相当
-.c-copyright {
-  font-size: pxToRem(12);
-
-  // line-height: 
-  // letter-spacing: ;
-}
-
-// ファーストビューに表示する画像。
-.c-main-visual {
+  align-items: center;
+  justify-content: center;
+  border-radius: 100vmax;
+  color: $c-white;
+  text-decoration: none;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
+  line-height: 1;
 
-// ファーストビューに表示するキャッチコピー
-.c-catch-copy {
-  font-size: pxToRem(16);
-
-
-  &:where(.m-strong) {
-    font-size: pxToRem(16);
-    color: inherit;
-    // font-weight: 900;
-    font-style: normal;
+  // 色指定
+  &.m-reserve {
+    background: $c-primary;
   }
-}
 
-// バナー画像を囲む要素。通常、aタグとimgタグを子要素に持つ。
-.c-banner-box {
-  // --foo: ;
-}
-
-// サムネイル画像を囲む要素。通常、imgタグを子要素に持つ。
-.c-thumbnail-box {
-  // --foo: ;
-}
-
-// 画像を格納する要素。figureもしくはdivに指定しimgを子要素に持つ。
-.c-image-box {
-  --foo: ;
-  // width: ;
-  // height: ;
-  // aspect-ratio: ;
-  // object-fit: ;
-
-  :where(&)>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  &.m-consult {
+    background: $c-line;
   }
-}
 
-// 汎用的な画像設定
-.c-image {
-  --foo: ;
-  // width: ;
-  // height: ;
-  // aspect-ratio: ;
-  // object-fit: ;
-}
+  // アイコン有
+  &.m-has-icon {
+    justify-content: space-between;
+    padding-inline: liquid(24) liquid(13);
+    height: liquid(52);
 
-// 汎用的なフレックスボックスのリスト。ulタグ相当。
-.c-flex-list {
-  display: flex;
+    &::before,
+    &::after {
+      content: "";
+      flex-shrink: 0;
+      background-position: center;
+      background-size: cover;
+      aspect-ratio: 1/ 1;
+    }
 
-  &:where(.m-reverse-even) {
-    &:nth-child(even) {
-      flex-flow: row-reverse;
+    &::before {
+      width: liquid(26);
+    }
+
+    &.m-reserve::before {
+      background-image: url(../images/icon-reserve.svg);
+    }
+
+    &.m-consult::before {
+      background-image: url(../images/icon-consult.svg);
+    }
+
+    &::after {
+      width: liquid(24);
+      background-image: url(../images/icon-right-arrow.svg);
     }
   }
 
-  &:where(.m-reverse-odd) {
-    &:nth-child(odd) {
-      flex-flow: row-reverse;
-    }
-  }
-
-  &:where(.m-column) {
+  // ヘッダーメニュー用
+  &.m-2line {
     flex-flow: column;
+    gap: liquid(4);
+    font-size: liquid(14);
+    padding-bottom: liquid(8);
+  }
+
+  // fv用
+  &.m-fv {
+    height: liquid(66);
+    font-size: liquid(24);
+    font-weight: 700;
+    padding-inline: liquid(28) liquid(20);
+
+    &::before {
+      width: liquid(32);
+    }
+
+    &::after {
+      width: liquid(30);
+    }
   }
 }
 
-// 順序のあるリストのフレックスボックス。olタグ相当
-.c-flex-ordered-list {
+// 販促テキスト用
+.c-action-text {
   display: flex;
-  list-style: decimal;
-}
+  position: relative;
+  align-items: baseline;
 
-// ナビゲーションメニュー用
-.c-nav-menu {
-  display: flex;
-  // gap: ;
-}
-
-// ドロップダウンメニュー用
-.c-drop-down-menu {
-  display: flex;
-  flex-flow: column;
-  // gap: ;
-}
-
-// テキストタイプのリンクに使用
-.c-text-link {
-  --foo: ;
-
-  &:hover {
-    --foo: ;
+  &::before,
+  &::after {
+    content: "";
+    background-position: center;
+    background-size: cover;
   }
 
-  &:active {
-    --foo: ;
+  // ヘッダーメニューの装飾用
+  &.m-slash-w-01 {
+    gap: liquid(2);
+    font-size: liquid(9);
+    & > .c-large {
+      font-size: liquid(15);
+    }
+    &::before,
+    &::after {
+      width: liquid(10);
+      aspect-ratio: 10/ 11;
+      translate: 0 liquid(2);
+    }
+    &::before {
+      background-image: url(../images/icon-slash-w01-left.svg);
+    }
+    &::after {
+      background-image: url(../images/icon-slash-w01-right.svg);
+    }
+  }
+
+  // fvの販促テキスト用
+  &.m-fv {
+    gap: liquid(5);
+    font-weight: 700;
+
+    &::before,
+    &::after {
+      width: liquid(23);
+      aspect-ratio: 23/ 17;
+    }
+    &::before {
+      background-image: url(../images/icon-slash-s-left.svg);
+    }
+    &::after {
+      background-image: url(../images/icon-slash-s-right.svg);
+    }
   }
 }
 
-// 下線付きリンクに使用
-.c-underlined-link {
-  --foo: ;
-  // text-decoration: underline;
-
-  &:hover {
-    --foo: ;
-  }
-
-  &:active {
-    --foo: ;
-  }
-}
-
-// 箱型のリンクに使用
-.c-box-link {
+/* 丸アイコン */
+.c-rounded-icon {
   display: grid;
   place-items: center;
-
-  &:hover {
-    --foo: ;
-  }
-
-  &:active {
-    --foo: ;
-  }
-}
-
-// サイトロゴ用。h1もしくはdivタグに指定。
-.c-site-logo {
-  --foo: ;
-}
-
-// サイト内のスタンダードなボタン。buttonタグ、aタグ
-.c-button {
-  display: grid;
-  place-items: center;
-  // padding: ;
-  // border-radius: ;
-  border: pxToRem(2) solid myHsl(--h-s, --l-3);
-  --h-s: var(--h-s-base);
-  background: myHsl(--h-s, --l-3);
-  color: myHsl(--h-s, --l-8);
-  // transition: all 0.5s;
-
-  &:hover {
-    background: myHsl(--h-s, --l-6);
-    color: myHsl(--h-s, --l-9);
-  }
-
-  &:active {
-    background: myHsl(--h-s, --l-5);
-    color: myHsl(--h-s, --l-8);
-  }
-}
-
-// 丸型のボタン
-.c-circle-button {
-  display: grid;
-  place-items: center;
+  grid-template-rows: liquid(30) liquid(40);
+  width: min(100%, liquid(100));
   aspect-ratio: 1/ 1;
-  // padding: pxToRem();
   border-radius: 50%;
-  --h-s: var(--h-s-base);
-  border: pxToRem(2) solid myHsl(--h-s, --l-3);
-  background: myHsl(--h-s, --l-3);
-  color: myHsl(--h-s, --l-8);
-  // transition: all 0.5s;
-
-  &:hover {
-    background: myHsl(--h-s, --l-6);
-    color: myHsl(--h-s, --l-9);
-  }
-
-  &:active {
-    background: myHsl(--h-s, --l-5);
-    color: myHsl(--h-s, --l-8);
-  }
-}
-
-// アイコン画像のボタン。buttonタグに指定。
-.c-icon-button {
-  --foo: ;
-
-  &:hover {
-    --foo: ;
-  }
-
-  &:active {
-    --foo: ;
-  }
-
-  &:has(span) {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
-
-  :where(&)>img {
-    --foo: ;
-  }
-
-  :where(&)>span {
-    --foo: ;
-  }
-}
-
-// ハンバーガーメニュー用。アイコン画像のボタンの亜種。
-.c-hamburger-button {
-  --foo: ;
-
-  &:hover {
-    --foo: ;
-  }
-
-  &:active {
-    --foo: ;
-  }
-
-  &:has(span) {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
-
-  :where(&)>img {
-    --foo: ;
-  }
-
-  :where(&)>span {
-    --foo: ;
-  }
-}
-
-// 汎用的な子要素を一つのセルにまとめるグリッド
-.c-one-cell-grid {
-  display: grid;
-
-  :where(&)>* {
-    grid-area: 1/ 1/ 2/ 2;
-  }
-}
-
-// カードタイプのコンポーネント群の配置をまとめるグリッド。
-.c-card-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: pxToRem();
-  grid-template-areas:
-    "title"
-    "img"
-    "desc";
-
-  &>.c-card-grid__title {
-    grid-area: title;
-  }
-
-  &>.c-card-grid__image {
-    grid-area: img;
-  }
-
-  &>.c-card-grid__desc {
-    grid-area: desc;
-  }
-}
-
-// フォームの入力欄。 文字列を入力するinput、textarea等
-.c-input-box {
-  padding: pxToRem();
-  border-radius: pxToRem();
-  // border: ;
-  background: myHsl(--h-s, --l, );
-
-  transition: all;
-
-  ::placeholder {}
-
-  &:not(:read-only, :disabled):hover {
-    --foo: ;
-  }
-
-  &:focus-visible {
-    --foo: ;
-  }
-
-  &:invalid {
-    --foo: ;
-  }
-
-  &:valid {
-    --foo: ;
-  }
-
-  &:disabled {
-    --foo: ;
-  }
-}
-
-// input要素のラベル
-.c-input-label {
-  display: flex;
-  align-items: center;
-  gap: pxToRem();
+  padding-block: liquid(10);
+  border: liquid(3) solid currentColor;
+  color: $c-primary;
+  background: $c-white;
+  box-shadow: 0 0 liquid(3) rgb(0 0 0/0.3);
+  text-align: center;
+  font-size: liquid(13);
+  font-weight: 700;
+  line-height: 1.3;
 
   &::before {
-    content: "任意";
-    flex-shrink: 0;
-    padding: pxToRem();
-    font-size: pxToRem();
-    border-radius: pxToRem();
-    --h-s: ;
-    color: myHsl(--h-s, --l);
-    background-color: myHsl(--h-s, --l);
+    content: "";
+    width: liquid(30);
+    aspect-ratio: 1/ 1;
+    background-position: center;
+    background-size: cover;
   }
 
-  :has(:required)>&::before {
-    content: "必須";
-    --h-s: ;
+  &.m-features-01::before {
+    background-image: url(../images/icon-features-01.svg);
   }
-}
-
-// チェックボックス一式
-.c-checkbox {
-  display: flex;
-  align-items: center;
-  gap: pxToRem();
-
-  &>input {
-    --foo: ;
+  &.m-features-02::before {
+    background-image: url(../images/icon-features-02.svg);
   }
-
-  &>label {
-    --foo: ;
-
-    &:hover {
-      --foo: ;
-    }
-  }
-
-  &:has(:checked)>label {
-    --foo: ;
+  &.m-features-03::before {
+    background-image: url(../images/icon-features-03.svg);
   }
 }
 
-// ラジオボタン一式
-.c-radio {
-  display: flex;
-  align-items: center;
-  gap: pxToRem();
-
-  &>input {
-    --foo: ;
-  }
-
-  &>label {
-    --foo: ;
-
-    &:hover {
-      --foo: ;
-    }
-  }
-
-  &:has(:checked)>label {
-    --foo: ;
-  }
+// アコーディオンメニュー制御用
+.c-accordion {
+  --duration: 500ms;
+  width: 100%;
+  padding: 0;
+  border-radius: 0.625rem;
+  background: #fff;
+  box-shadow: 0 0 4px rgb(0 0 0/0.25);
+  overflow: clip;
+  color: #449dd0;
 }
 
-// 自作チェックボックス
-.c-custom-checkbox {
+.c-accordion__question {
   display: grid;
+  grid-template-columns: 1fr 1rem;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 700;
+  background: #fff;
+  font-size: 1.25rem;
+  transition: background 0.25s linear, color 0.25s linear;
 
-  &>* {
-    grid-area: 1/ 1/ 2/ 2;
-  }
-
-  &>input {
-    opacity: 0;
-    z-index: -1;
-  }
-
-  &>label {
-    display: flex;
-    align-items: center;
-    gap: pxToRem();
-    z-index: 1;
-
-    &::before {
-      content: "";
-    }
-
-    &:hover {
-      --foo: ;
-    }
-  }
-
-  &:has(:checked)>label {
-    &::before {
-      content: "";
-    }
-  }
-}
-
-// 自作ラジオボタン
-.c-custom-radio {
-  display: grid;
-
-  &>* {
-    grid-area: 1/ 1/ 2/ 2;
-  }
-
-  &>input {
-    opacity: 0;
-    z-index: -1;
-  }
-
-  &>label {
+  &::before,
+  &::after {
+    content: "";
+    grid-area: 1/ 2/ -1/ 3;
     display: grid;
-    align-items: center;
-    gap: pxToRem();
-    z-index: 1;
-
-    &:hover {
-      --foo: ;
-    }
+    place-items: center;
+    height: 2px;
+    background-color: currentColor;
   }
 
-  &:has(:checked)>label {
-    --foo: ;
+  &::before {
+    rotate: 90deg;
+    transition: rotate ease-out var(--duration);
   }
+
+  .c-accordion.is-open & {
+    color: #fff;
+    background: #449dd0;
+  }
+
+  .c-accordion.is-open &::before {
+    rotate: 0deg;
+  }
+}
+
+.c-accordion__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows var(--duration) ease-out,
+    padding-top var(--duration) ease-out, opacity var(--duration) linear;
+
+  .c-accordion.is-open & {
+    grid-template-rows: 1fr;
+    padding-top: 1rem;
+    opacity: 1;
+  }
+}
+
+.c-accordion__answer-box {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  overflow: hidden;
 }

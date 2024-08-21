@@ -11,8 +11,13 @@ $defaultMinVp: 320;
 $defaultMaxVp: 1440;
 
 // **生成関数
-@function clampWithPxToRem($minSize, $maxSize, $minVp: $defaultMinVp, $maxVp: $defaultMaxVp) {
-  @if ($maxVp - $minVp)==0 {
+@function clampWithPxToRem(
+  $minSize,
+  $maxSize,
+  $minVp: $defaultMinVp,
+  $maxVp: $defaultMaxVp
+) {
+  @if ($maxVp - $minVp) ==0 {
     @warn "【clampWithPxToRem】ビューポート同値により0除算発生のため、1remを返り値にしています";
     @return 1rem;
   }
@@ -28,19 +33,26 @@ $defaultMaxVp: 1440;
   $slope: math.div(($maxSize - $minSize), ($maxVp - $minVp));
   $intercept: $minSize - ($minVp * $slope);
   $outputSlope: math.div(round($slope * $roundFactor * 100), $roundFactor) * 1vw;
-  $outputIntercept: math.div(round($intercept * $roundFactor * $pxToRemFactor), $roundFactor);
-  @return clamp($minSize * $pxToRemFactor, $outputSlope + $outputIntercept, $maxSize * $pxToRemFactor);
+  $outputIntercept: math.div(
+    round($intercept * $roundFactor * $pxToRemFactor),
+    $roundFactor
+  );
+  @return clamp(
+    $minSize * $pxToRemFactor,
+    $outputSlope + $outputIntercept,
+    $maxSize * $pxToRemFactor
+  );
 }
 
 // clampで調整したサイズ反映用
 // **CSS変数
 $liquid-size-cssVars: (
-  "base" : "--liquid-size-base",
-  "pc" : "--liquid-size-pc",
-  "sp" : "--liquid-size-sp"
+  "base": "--liquid-size",
+  "pc": "--liquid-size-pc",
+  "sp": "--liquid-size-sp",
 );
 
-@function pxToLiquidSize($multiplier: 16, $cssVar: "base") {
+@function liquid($multiplier: 16, $cssVar: "base") {
   $selectedVar: #{map-get($liquid-size-cssVars, $cssVar)};
   @return calc(var($selectedVar) * $multiplier * 0.0625);
 }
