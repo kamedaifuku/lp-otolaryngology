@@ -603,18 +603,319 @@
   }
 }
 
+/* 病院紹介
+  --------------------------------------------------------- */
+
+.p-about-clinic {
+  display: flex;
+  justify-content: center;
+  padding-bottom: liquid(40);
+}
+
+.p-about-clinic__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
+
+.p-about-clinic__contents {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: liquid(16);
+  padding-top: liquid(24);
+}
+
+.p-about-clinic__img-01 {
+  width: 100%;
+  border-radius: liquid(10);
+  overflow: clip;
+  aspect-ratio: 345/ 243;
+  padding-bottom: liquid(4);
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.p-about-clinic__desc {
+  display: flex;
+  flex-flow: column;
+  gap: liquid(14);
+  font-size: liquid(18);
+  color: $c-black;
+}
+
+.p-outpatient-icons {
+  display: flex;
+  justify-content: center;
+  gap: liquid(16);
+}
+
+.p-about-clinic__img-02 {
+  padding-top: liquid(22);
+}
+
+.p-about-clinic__online {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: liquid(8);
+  width: 100%;
+}
+
+.p-online__title {
+  font-weight: 700;
+  font-size: liquid(16);
+  color: $c-primary;
+}
+
+.p-online__text {
+  font-size: liquid(13);
+  line-height: 1.6;
+  text-align: center;
+  padding-bottom: liquid(10);
+}
+
+.p-online-merits {
+  width: 100%;
+  padding-block: liquid(24);
+  border-radius: liquid(10);
+  background: $c-secondary;
+}
+
+.p-online-merits__title {
+  text-align: center;
+  font-size: liquid(14);
+  font-weight: 700;
+}
+
+.p-online-merits__desc-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: liquid(16);
+  padding-top: liquid(20);
+}
+
+.p-online-merits__desc {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: liquid(12);
+
+  &::before {
+    content: "";
+    aspect-ratio: 1/ 1;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.m-merits-01 {
+    width: 100%;
+    gap: liquid(8);
+    &::before {
+      width: liquid(34);
+      background-image: url(../images/icon-merits-01.svg);
+    }
+  }
+  &.m-merits-02 {
+    width: 45%;
+    gap: liquid(8);
+    &::before {
+      width: liquid(46);
+      background-image: url(../images/icon-merits-02.svg);
+    }
+  }
+  &.m-merits-03 {
+    width: 45%;
+    gap: liquid(12);
+    &::before {
+      width: liquid(42);
+      background-image: url(../images/icon-merits-03.svg);
+    }
+  }
+}
+
+.m-merits-01 {
+}
+
 /* 
   --------------------------------------------------------- */
 
 /* 
   --------------------------------------------------------- */
 
-// 機能名
+.p-reason {
+}
 
-/* 
-  --------------------------------------------------------- */
+.p-reason__inner {
+}
 
-/* Component***
-    --------------------------------------------------------- */
-/*汎用コンポーネント
-   *********************/
+.p-reason__list {
+}
+
+.p-reason-card {
+}
+
+.m-reason-01 {
+}
+
+.p-reason-card__number {
+}
+
+.c-large {
+}
+
+.p-reason-card__title {
+}
+
+.p-reason-card__text {
+}
+
+.m-reason-02 {
+}
+
+.m-reason-03 {
+}
+
+.m-reason-04 {
+}
+
+.m-reason-05 {
+}
+
+.p-about-doctor {
+}
+
+.p-about-doctor__inner {
+}
+
+.p-about-docto__title {
+}
+
+.p-about-doctor__contents {
+}
+
+.p-doctor-info {
+}
+
+.p-doctor-info__img {
+}
+
+.p-doctor-info__name-box {
+}
+
+.p-doctor-info__title {
+}
+
+.p-doctor-info__name {
+}
+
+.p-doctor-info__posts {
+}
+
+.p-doctor-biography {
+}
+
+.p-doctor-biography__title {
+}
+
+.p-doctor-biography__list {
+}
+
+.p-cta {
+}
+
+.p-cta__inner {
+}
+
+.p-cta__box {
+}
+
+.c-action-text {
+}
+
+.m-cta {
+}
+
+.p-cta-links {
+}
+
+.c-link-button {
+}
+
+.m-consult {
+}
+
+.m-has-icon {
+}
+
+.m-reserve {
+}
+
+.p-flow {
+}
+
+.p-flow__inner {
+}
+
+.p-flow__contents {
+}
+
+.p-flow__list {
+}
+
+.p-flow-card {
+}
+
+.p-flow-card__title-area {
+}
+
+.p-flow-card__step-icon {
+}
+
+.p-flow-card__title {
+}
+
+.p-flow-card__img {
+}
+
+.p-flow-card__text {
+}
+
+.p-access {
+}
+
+.p-access__inner {
+}
+
+.p-access__contents {
+}
+
+.p-clinic-info {
+}
+
+.p-clinic-info__group {
+}
+
+.p-clinic-info__title {
+}
+
+.p-clinic-info__desc {
+}
+
+.p-consultation-hours {
+}
+
+.p-consultation-hours__table {
+}
+
+.u-black {
+}
+
+.p-google-map {
+}

@@ -357,7 +357,7 @@ em {
   border: calc(var(--liquid-size) * 3 * 0.0625) solid currentColor;
   color: #449dd0;
   background: #fff;
-  box-shadow: 0 0 calc(var(--liquid-size) * 3 * 0.0625) rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 calc(var(--liquid-size) * 6 * 0.0625) rgba(0, 0, 0, 0.5);
   text-align: center;
   font-size: calc(var(--liquid-size) * 13 * 0.0625);
   font-weight: 700;
@@ -378,6 +378,18 @@ em {
 .c-rounded-icon.m-middle::before {
   width: calc(var(--liquid-size) * 28 * 0.0625);
 }
+.c-rounded-icon.m-outpatient {
+  grid-template-rows: 50% 30%;
+  font-size: calc(var(--liquid-size) * 14 * 0.0625);
+  line-height: 1.3;
+}
+.c-rounded-icon.m-outpatient::before {
+  content: "";
+  width: calc(var(--liquid-size) * 50 * 0.0625);
+  aspect-ratio: 70/55;
+  background-position: center;
+  background-size: cover;
+}
 .c-rounded-icon.m-features-01::before {
   background-image: url(../images/icon-features-01.svg);
 }
@@ -395,6 +407,15 @@ em {
 }
 .c-rounded-icon.m-complications-03::before {
   background-image: url(../images/icon-complications-03.webp);
+}
+.c-rounded-icon.m-outpatient-01::before {
+  background-image: url(../images/icon-outpatient-01.webp);
+}
+.c-rounded-icon.m-outpatient-02::before {
+  background-image: url(../images/icon-outpatient-02.webp);
+}
+.c-rounded-icon.m-outpatient-03::before {
+  background-image: url(../images/icon-outpatient-03.webp);
 }
 
 .c-box-text {
@@ -1102,13 +1123,140 @@ em {
   height: 100%;
 }
 
+/* 病院紹介
+  --------------------------------------------------------- */
+.p-about-clinic {
+  display: flex;
+  justify-content: center;
+  padding-bottom: calc(var(--liquid-size) * 40 * 0.0625);
+}
+
+.p-about-clinic__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
+
+.p-about-clinic__contents {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+  padding-top: calc(var(--liquid-size) * 24 * 0.0625);
+}
+
+.p-about-clinic__img-01 {
+  width: 100%;
+  border-radius: calc(var(--liquid-size) * 10 * 0.0625);
+  overflow: clip;
+  aspect-ratio: 345/243;
+  padding-bottom: calc(var(--liquid-size) * 4 * 0.0625);
+}
+.p-about-clinic__img-01 > img {
+  width: 100%;
+  height: 100%;
+}
+
+.p-about-clinic__desc {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 14 * 0.0625);
+  font-size: calc(var(--liquid-size) * 18 * 0.0625);
+  color: #000;
+}
+
+.p-outpatient-icons {
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+}
+
+.p-about-clinic__img-02 {
+  padding-top: calc(var(--liquid-size) * 22 * 0.0625);
+}
+
+.p-about-clinic__online {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+  width: 100%;
+}
+
+.p-online__title {
+  font-weight: 700;
+  font-size: calc(var(--liquid-size) * 16 * 0.0625);
+  color: #449dd0;
+}
+
+.p-online__text {
+  font-size: calc(var(--liquid-size) * 13 * 0.0625);
+  line-height: 1.6;
+  text-align: center;
+  padding-bottom: calc(var(--liquid-size) * 10 * 0.0625);
+}
+
+.p-online-merits {
+  width: 100%;
+  padding-block: calc(var(--liquid-size) * 24 * 0.0625);
+  border-radius: calc(var(--liquid-size) * 10 * 0.0625);
+  background: #eef6ff;
+}
+
+.p-online-merits__title {
+  text-align: center;
+  font-size: calc(var(--liquid-size) * 14 * 0.0625);
+  font-weight: 700;
+}
+
+.p-online-merits__desc-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+  padding-top: calc(var(--liquid-size) * 20 * 0.0625);
+}
+
+.p-online-merits__desc {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: calc(var(--liquid-size) * 12 * 0.0625);
+}
+.p-online-merits__desc::before {
+  content: "";
+  aspect-ratio: 1/1;
+  background-position: center;
+  background-size: cover;
+}
+.p-online-merits__desc.m-merits-01 {
+  width: 100%;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+}
+.p-online-merits__desc.m-merits-01::before {
+  width: calc(var(--liquid-size) * 34 * 0.0625);
+  background-image: url(../images/icon-merits-01.svg);
+}
+.p-online-merits__desc.m-merits-02 {
+  width: 45%;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+}
+.p-online-merits__desc.m-merits-02::before {
+  width: calc(var(--liquid-size) * 46 * 0.0625);
+  background-image: url(../images/icon-merits-02.svg);
+}
+.p-online-merits__desc.m-merits-03 {
+  width: 45%;
+  gap: calc(var(--liquid-size) * 12 * 0.0625);
+}
+.p-online-merits__desc.m-merits-03::before {
+  width: calc(var(--liquid-size) * 42 * 0.0625);
+  background-image: url(../images/icon-merits-03.svg);
+}
+
 /* 
   --------------------------------------------------------- */
 /* 
   --------------------------------------------------------- */
-/* 
-  --------------------------------------------------------- */
-/* Component***
-    --------------------------------------------------------- */
-/*汎用コンポーネント
-   *********************/

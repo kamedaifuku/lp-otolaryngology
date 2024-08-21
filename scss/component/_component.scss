@@ -184,7 +184,7 @@
   border: liquid(3) solid currentColor;
   color: $c-primary;
   background: $c-white;
-  box-shadow: 0 0 liquid(3) rgb(0 0 0/0.3);
+  box-shadow: 0 0 liquid(6) rgb(0 0 0/0.5);
   text-align: center;
   font-size: liquid(13);
   font-weight: 700;
@@ -209,6 +209,20 @@
     }
   }
 
+  &.m-outpatient {
+    grid-template-rows: 50% 30%;
+    font-size: liquid(14);
+    line-height: 1.3;
+
+    &::before {
+      content: "";
+      width: liquid(50);
+      aspect-ratio: 70/ 55;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
   // fvの特徴
   &.m-features-01::before {
     background-image: url(../images/icon-features-01.svg);
@@ -229,6 +243,17 @@
   }
   &.m-complications-03::before {
     background-image: url(../images/icon-complications-03.webp);
+  }
+
+  // 外来
+  &.m-outpatient-01::before {
+    background-image: url(../images/icon-outpatient-01.webp);
+  }
+  &.m-outpatient-02::before {
+    background-image: url(../images/icon-outpatient-02.webp);
+  }
+  &.m-outpatient-03::before {
+    background-image: url(../images/icon-outpatient-03.webp);
   }
 }
 
