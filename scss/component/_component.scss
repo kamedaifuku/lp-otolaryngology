@@ -80,10 +80,14 @@
   // ヘッダーメニュー用
   &.m-2line {
     flex-flow: column;
-    gap: liquid(4);
+    gap: 0.285em;
     font-size: liquid(14);
-    padding-bottom: liquid(8);
+    padding-bottom: 0.57em;
     line-height: 1;
+
+    @include mq() {
+      font-size: liquid(17);
+    }
   }
 
   // fv用
@@ -91,14 +95,19 @@
     height: liquid(63);
     font-size: liquid(24);
     font-weight: 700;
-    padding-inline: liquid(28) liquid(20);
+    padding-inline: 1.16em 0.833em;
 
     &::before {
-      width: liquid(32);
+      width: 1.333em;
     }
 
     &::after {
-      width: liquid(30);
+      width: 1.25em;
+    }
+
+    @include mq() {
+      height: liquid(96);
+      font-size: liquid(36);
     }
   }
 }
@@ -122,19 +131,25 @@
     gap: liquid(2);
     font-size: liquid(9);
     & > .c-large {
-      font-size: liquid(15);
+      font-size: 1.66em;
     }
     &::before,
     &::after {
-      width: liquid(10);
+      width: 1.1em;
       aspect-ratio: 10/ 11;
-      translate: 0 liquid(2);
+      translate: 0 0.22em;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     &::before {
       background-image: url(../images/icon-slash-w01-left.svg);
     }
     &::after {
       background-image: url(../images/icon-slash-w01-right.svg);
+    }
+
+    @include mq() {
+      font-size: liquid(11);
     }
   }
 
@@ -146,7 +161,7 @@
 
     &::before,
     &::after {
-      width: liquid(23);
+      width: 1.35em;
       aspect-ratio: 23/ 17;
     }
     &::before {
@@ -154,6 +169,10 @@
     }
     &::after {
       background-image: url(../images/icon-slash-s-right.svg);
+    }
+
+    @include mq() {
+      font-size: liquid(18);
     }
   }
 
@@ -263,6 +282,17 @@
   }
   &.m-outpatient-03::before {
     background-image: url(../images/icon-outpatient-03.webp);
+  }
+
+  @include mq() {
+    gap: 20%;
+    width: min(100%, liquid(132));
+    font-size: liquid(18);
+    padding-block: liquid(22);
+
+    &::before {
+      width: liquid(38);
+    }
   }
 }
 

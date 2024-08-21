@@ -5,7 +5,7 @@ $breakpoints: (
   "pc": "(width >= 768px)",
 );
 
-@mixin mq($breakpoint: "sp") {
+@mixin mq($breakpoint: "pc") {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }

@@ -56,11 +56,18 @@
     width: 100%;
     height: 100%;
   }
+
+  @include mq() {
+    width: liquid(151);
+  }
 }
 
 .p-header__link {
   width: liquid(132);
   aspect-ratio: 132/ 48;
+  @include mq() {
+    width: liquid(167);
+  }
 }
 
 /*
@@ -85,8 +92,19 @@
     "fee"
     "link";
   justify-items: center;
-  width: min(100%, pxToRem(375));
+  position: relative;
+  z-index: 0;
+  width: min(100%, liquid(375));
   padding-inline: liquid(10);
+
+  @include mq() {
+    width: min(100%, liquid(1260));
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "mv   mv"
+      "desc fee"
+      "link link";
+  }
 }
 
 .p-fv__mv-box {
@@ -99,12 +117,19 @@
   & > * {
     grid-area: 1/ 1/ -1/ -1;
   }
+
+  @include mq() {
+    border-radius: liquid(42);
+  }
 }
 
 .p-fv__mv {
   width: 100%;
   aspect-ratio: 357/ 276;
   object-fit: cover;
+  @include mq() {
+    aspect-ratio: 1240/ 730;
+  }
 }
 
 .p-fv-catchphrase {
@@ -112,7 +137,7 @@
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  gap: liquid(8);
+  gap: 0.333em;
   position: relative;
   left: liquid(5);
   bottom: liquid(24);
@@ -120,12 +145,23 @@
   font-weight: 700;
   letter-spacing: 0;
   color: $c-white;
+
+  @include mq() {
+    left: liquid(40);
+    bottom: liquid(174);
+    font-size: liquid(58);
+  }
 }
 
 .p-fv-title__text {
   border-radius: liquid(8);
   padding: liquid(4);
   background: $c-primary-a90;
+
+  @include mq() {
+    border-radius: liquid(20);
+    padding: liquid(15);
+  }
 }
 
 .p-fv-doctor {
@@ -133,21 +169,32 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  gap: 2px;
+  gap: 0.125em;
   position: relative;
   bottom: liquid(6);
   right: liquid(8);
-  padding: liquid(7) liquid(20);
-  border-radius: 4px;
+  padding: 0.4375em 1.25em;
+  border-radius: 0.25em;
   background: rgba(255, 255, 255, 0.9);
+  font-size: liquid(16);
+
+  @include mq() {
+    gap: 0.22em;
+    padding: 0.2em 0.9em 0.4em;
+    bottom: liquid(35);
+    right: liquid(38);
+    font-size: liquid(40);
+  }
 }
 
 .p-fv-doctor__title {
-  font-size: liquid(9);
+  font-size: 0.5625em;
+  @include mq() {
+    font-size: 0.65em;
+  }
 }
 
 .p-fv-doctor__name {
-  font-size: liquid(16);
   font-weight: 700;
 }
 
@@ -155,15 +202,36 @@
   grid-area: desc;
   font-size: liquid(18);
   padding-block: liquid(6) liquid(13);
+
+  @include mq() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-block: liquid(20) liquid(0);
+    font-size: liquid(34);
+  }
 }
 
 .p-fv__features {
   grid-area: icon;
   display: flex;
+  align-items: center;
   gap: liquid(16);
   justify-content: center;
   padding-inline: liquid(9);
   width: 100%;
+
+  @include mq() {
+    grid-area: mv;
+    place-self: end start;
+    justify-content: flex-start;
+    gap: liquid(22);
+    z-index: 1;
+    position: relative;
+    left: liquid(32);
+    bottom: liquid(24);
+  }
 }
 
 .p-fv__fee {
@@ -171,6 +239,11 @@
   padding-top: liquid(14);
   width: 100%;
   padding-inline: liquid(12);
+
+  @include mq() {
+    padding-top: liquid(20);
+    padding-inline: liquid(52);
+  }
 }
 
 .p-fee-card {
@@ -182,6 +255,11 @@
   overflow: clip;
   background: $c-white;
   box-shadow: 0 0 liquid(7) rgb(0 0 0/0.3);
+
+  @include mq() {
+    max-width: liquid(414);
+    height: liquid(83);
+  }
 }
 
 .p-fee-card__title {
@@ -189,11 +267,15 @@
   align-items: center;
   width: 26%;
   color: $c-white;
-  padding-left: liquid(18);
+  padding-left: 1em;
   font-size: liquid(18);
   font-weight: 700;
   background: $c-primary;
   clip-path: circle(100% at 0 center);
+
+  @include mq() {
+    font-size: liquid(22);
+  }
 }
 
 .p-fee-card__desc {
@@ -201,32 +283,37 @@
   align-items: center;
   gap: liquid(5);
   color: #333;
+  font-size: liquid(16);
+  @include mq() {
+    gap: liquid(11);
+    font-size: liquid(20);
+  }
 }
 
 .p-fee-card__preamble {
   line-height: 1.2;
   font-weight: 700;
-  font-size: liquid(15);
+  font-size: 0.9375;
 }
 
 .p-fee-card__price {
-  font-size: liquid(35);
+  font-size: 2.1875em;
   font-style: normal;
   font-weight: 700;
 }
 
 .p-fee-card__comma {
-  font-size: liquid(18);
+  font-size: 0.51em;
 }
 .p-fee-card__unit {
-  font-size: liquid(17);
+  font-size: 0.48em;
 }
 
 .p-fee-card__supplement {
   line-height: 1.1;
   text-align: center;
-  font-size: liquid(12);
-  padding-left: liquid(4);
+  font-size: 0.75em;
+  padding-left: 0.33em;
 }
 
 .p-fv__link {
@@ -235,9 +322,13 @@
   flex-flow: column;
   align-items: center;
   gap: liquid(5);
+  width: min(100%, liquid(527));
   padding-top: liquid(14);
   padding-inline: liquid(5);
-  width: 100%;
+
+  @include mq() {
+    padding-top: liquid(9);
+  }
 }
 
 /* お悩み
