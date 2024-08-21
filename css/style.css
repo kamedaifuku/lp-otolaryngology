@@ -878,6 +878,7 @@ em {
   font-size: 0.875em;
 }
 .p-concern__caution .m-decoration {
+  position: relative;
   font-size: 1.25em;
   font-weight: 700;
   color: #449dd0;
