@@ -23,14 +23,23 @@
   width: 100%;
   height: 100%;
   line-height: 1.5;
+  background-image: linear-gradient(
+    135deg,
+    transparent 0 40%,
+    $c-white-a75 48% 52%,
+    transparent 60% 100%
+  );
+  background-size: 300%;
+  background-position: right center;
+  animation: shine 4s linear infinite;
 
   // 色指定
   &.m-reserve {
-    background: $c-primary;
+    background-color: $c-primary;
   }
 
   &.m-consult {
-    background: $c-line;
+    background-color: $c-line;
   }
 
   // アイコン有基本
@@ -272,7 +281,6 @@
 // アコーディオンメニュー制御用
 .c-accordion {
   --duration: 500ms;
-  width: 100%;
   padding: 0;
   border-radius: 0.625rem;
   background: $c-white;
@@ -283,36 +291,61 @@
 
 .c-accordion__question {
   display: grid;
-  grid-template-columns: 1fr 1rem;
+  grid-template-columns: liquid(37) 1fr liquid(16);
   align-items: center;
-  padding: 1rem;
+  gap: liquid(12);
+  width: var(--contents);
+  padding: liquid(16);
   font-weight: 700;
   background: $c-white;
-  font-size: 1.25rem;
+  font-size: liquid(16);
   transition: background 0.25s linear, color 0.25s linear;
 
-  &::before,
-  &::after {
-    content: "";
-    grid-area: 1/ 2/ -1/ 3;
+  &::before {
+    content: "Q";
     display: grid;
     place-items: center;
-    height: 2px;
-    background-color: currentColor;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    font-family: $font-en-2;
+    font-weight: 700;
+    background: $c-primary;
+    color: $c-white;
+    transition: background 0.25s linear, color 0.25s linear;
   }
 
-  &::before {
-    rotate: 90deg;
-    transition: rotate ease-out var(--duration);
+  & > .m-icon {
+    display: grid;
+    color: currentColor;
+    &::before,
+    &::after {
+      content: "";
+      grid-area: 1/ 1/ -1/ -1;
+      display: grid;
+      place-items: center;
+      height: 2px;
+      background-color: currentColor;
+    }
+
+    &::before {
+      rotate: 90deg;
+      transition: rotate ease-out var(--duration);
+    }
   }
 
   .c-accordion.is-open & {
     color: $c-white;
-    background: #449dd0;
-  }
+    background: $c-primary;
 
-  .c-accordion.is-open &::before {
-    rotate: 0deg;
+    &::before {
+      color: $c-primary;
+      background: $c-white;
+    }
+
+    & > .m-icon::before {
+      rotate: 0deg;
+    }
   }
 }
 
@@ -325,14 +358,36 @@
 
   .c-accordion.is-open & {
     grid-template-rows: 1fr;
-    padding-top: 1rem;
+    padding-block: liquid(16);
     opacity: 1;
   }
 }
 
 .c-accordion__answer-box {
   display: flex;
-  flex-flow: column;
-  gap: 0.5rem;
+  gap: liquid(12);
+  align-items: center;
   overflow: hidden;
+  padding-inline: liquid(16);
+
+  &::before {
+    flex-shrink: 0;
+    content: "A";
+    display: grid;
+    place-items: center;
+    width: liquid(36);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    font-family: $font-en-2;
+    font-weight: 700;
+    background: $c-primary;
+    color: $c-white;
+  }
+}
+
+.c-accordion__answer-texts {
+  display: flex;
+  flex-flow: column;
+  gap: liquid(8);
+  line-height: 1.6;
 }

@@ -227,12 +227,16 @@ em {
   width: 100%;
   height: 100%;
   line-height: 1.5;
+  background-image: linear-gradient(135deg, transparent 0 40%, rgba(255, 255, 255, 0.75) 48% 52%, transparent 60% 100%);
+  background-size: 300%;
+  background-position: right center;
+  animation: shine 4s linear infinite;
 }
 .c-link-button.m-reserve {
-  background: #449dd0;
+  background-color: #449dd0;
 }
 .c-link-button.m-consult {
-  background: #06c755;
+  background-color: #06c755;
 }
 .c-link-button.m-has-icon {
   justify-content: space-between;
@@ -431,7 +435,6 @@ em {
 
 .c-accordion {
   --duration: 500ms;
-  width: 100%;
   padding: 0;
   border-radius: 0.625rem;
   background: #fff;
@@ -442,23 +445,42 @@ em {
 
 .c-accordion__question {
   display: grid;
-  grid-template-columns: 1fr 1rem;
+  grid-template-columns: calc(var(--liquid-size) * 37 * 0.0625) 1fr calc(var(--liquid-size) * 16 * 0.0625);
   align-items: center;
-  padding: 1rem;
+  gap: calc(var(--liquid-size) * 12 * 0.0625);
+  width: var(--contents);
+  padding: calc(var(--liquid-size) * 16 * 0.0625);
   font-weight: 700;
   background: #fff;
-  font-size: 1.25rem;
+  font-size: calc(var(--liquid-size) * 16 * 0.0625);
   transition: background 0.25s linear, color 0.25s linear;
 }
-.c-accordion__question::before, .c-accordion__question::after {
+.c-accordion__question::before {
+  content: "Q";
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-family: arial, "Oswald", sans-serif;
+  font-weight: 700;
+  background: #449dd0;
+  color: #fff;
+  transition: background 0.25s linear, color 0.25s linear;
+}
+.c-accordion__question > .m-icon {
+  display: grid;
+  color: currentColor;
+}
+.c-accordion__question > .m-icon::before, .c-accordion__question > .m-icon::after {
   content: "";
-  grid-area: 1/2/-1/3;
+  grid-area: 1/1/-1/-1;
   display: grid;
   place-items: center;
   height: 2px;
   background-color: currentColor;
 }
-.c-accordion__question::before {
+.c-accordion__question > .m-icon::before {
   rotate: 90deg;
   transition: rotate ease-out var(--duration);
 }
@@ -467,6 +489,10 @@ em {
   background: #449dd0;
 }
 .c-accordion.is-open .c-accordion__question::before {
+  color: #449dd0;
+  background: #fff;
+}
+.c-accordion.is-open .c-accordion__question > .m-icon::before {
   rotate: 0deg;
 }
 
@@ -478,15 +504,36 @@ em {
 }
 .c-accordion.is-open .c-accordion__answer {
   grid-template-rows: 1fr;
-  padding-top: 1rem;
+  padding-block: calc(var(--liquid-size) * 16 * 0.0625);
   opacity: 1;
 }
 
 .c-accordion__answer-box {
   display: flex;
-  flex-flow: column;
-  gap: 0.5rem;
+  gap: calc(var(--liquid-size) * 12 * 0.0625);
+  align-items: center;
   overflow: hidden;
+  padding-inline: calc(var(--liquid-size) * 16 * 0.0625);
+}
+.c-accordion__answer-box::before {
+  flex-shrink: 0;
+  content: "A";
+  display: grid;
+  place-items: center;
+  width: calc(var(--liquid-size) * 36 * 0.0625);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-family: arial, "Oswald", sans-serif;
+  font-weight: 700;
+  background: #449dd0;
+  color: #fff;
+}
+
+.c-accordion__answer-texts {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+  line-height: 1.6;
 }
 
 .c-slider {
@@ -1129,7 +1176,7 @@ em {
 .p-about-clinic {
   display: flex;
   justify-content: center;
-  padding-bottom: calc(var(--liquid-size) * 40 * 0.0625);
+  padding-bottom: calc(var(--liquid-size) * 38 * 0.0625);
 }
 
 .p-about-clinic__inner {
@@ -1257,7 +1304,515 @@ em {
   background-image: url(../images/icon-merits-03.svg);
 }
 
-/* 
+/* 選ばれる理由
   --------------------------------------------------------- */
-/* 
+.p-reason {
+  display: flex;
+  justify-content: center;
+  background: #eef6ff;
+  padding-block: calc(var(--liquid-size) * 32 * 0.0625);
+}
+
+.p-reason__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
+
+.p-reason__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--liquid-size) * 42 * 0.0625);
+  width: 100%;
+  padding-top: calc(var(--liquid-size) * 50 * 0.0625);
+}
+
+.p-reason-card {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+  position: relative;
+  padding: calc(var(--liquid-size) * 15 * 0.0625) calc(var(--liquid-size) * 16 * 0.0625) calc(var(--liquid-size) * 11 * 0.0625);
+  height: 100%;
+  border-radius: calc(var(--liquid-size) * 10 * 0.0625);
+  border: 1px solid #d8d8d8;
+  background: #fff;
+}
+.p-reason-card::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--liquid-size) * 28 * 0.0625);
+  right: calc(var(--liquid-size) * 24 * 0.0625);
+  width: calc(var(--liquid-size) * 40 * 0.0625);
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+}
+.p-reason-card.m-reason-01::after {
+  background-image: url(../images/icon-reason-01.svg);
+}
+.p-reason-card.m-reason-02::after {
+  background-image: url(../images/icon-reason-02.svg);
+}
+.p-reason-card.m-reason-03::after {
+  background-image: url(../images/icon-reason-03.svg);
+}
+.p-reason-card.m-reason-04:after {
+  background-image: url(../images/icon-reason-04.svg);
+}
+.p-reason-card.m-reason-05::after {
+  background-image: url(../images/icon-reason-05.svg);
+}
+
+.p-reason-card__number {
+  --length: calc(var(--liquid-size) * 18 * 0.0625);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: absolute;
+  top: calc(-1 * var(--length));
+  width: calc(var(--liquid-size) * 58 * 0.0625);
+  aspect-ratio: 58/60;
+  padding-top: calc(var(--liquid-size) * 9 * 0.0625);
+  background: #449dd0;
+  font-size: calc(var(--liquid-size) * 7 * 0.0625);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #fff;
+  -webkit-clip-path: polygon(0 0, 150% 0, 150% 100%, 100% 100%, 50% 80%, 0 100%);
+          clip-path: polygon(0 0, 150% 0, 150% 100%, 100% 100%, 50% 80%, 0 100%);
+}
+.p-reason-card__number > .m-large-en {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--liquid-size) * 22 * 0.0625);
+  line-height: 1;
+}
+.p-reason-card__number::after {
+  content: "";
+  position: absolute;
+  height: var(--length);
+  aspect-ratio: 10/18;
+  top: 0;
+  left: 100%;
+  background: #177cb5;
+  -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.p-reason-card__title {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-size: calc(var(--liquid-size) * 18 * 0.0625);
+  padding-bottom: calc(var(--liquid-size) * 7 * 0.0625);
+  border-bottom: 1px solid #c6c6c6;
+  line-height: 1.4;
+}
+.p-reason-card__title > .c-em-primary {
+  font-size: calc(var(--liquid-size) * 20 * 0.0625);
+  line-height: 1.3;
+}
+
+.p-reason-card__text {
+  padding-inline: calc(var(--liquid-size) * 11 * 0.0625);
+}
+
+/* 医師情報
   --------------------------------------------------------- */
+.p-about-doctor {
+  display: flex;
+  justify-content: center;
+  padding-block: calc(var(--liquid-size) * 32 * 0.0625) calc(var(--liquid-size) * 40 * 0.0625);
+}
+
+.p-about-doctor__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: calc(var(--liquid-size) * 24 * 0.0625);
+  width: var(--contents);
+}
+
+.p-about-doctor__title {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: calc(var(--liquid-size) * 3 * 0.0625);
+  font-size: calc(var(--liquid-size) * 24 * 0.0625);
+}
+
+.p-about-doctor__contents {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 24 * 0.0625);
+  width: 100%;
+  padding: calc(var(--liquid-size) * 24 * 0.0625) calc(var(--liquid-size) * 16 * 0.0625);
+  border-radius: calc(var(--liquid-size) * 10 * 0.0625);
+  background: #eef6ff;
+}
+
+.p-doctor-info {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+}
+
+.p-doctor-info__sub-box {
+  display: grid;
+  place-items: end center;
+  position: relative;
+  padding-inline: calc(var(--liquid-size) * 2 * 0.0625);
+}
+.p-doctor-info__sub-box > * {
+  grid-area: 1/1/-1/-1;
+}
+
+.p-doctor-info__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.p-doctor-info__name-box {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--liquid-size) * 9 * 0.0625);
+  position: relative;
+  bottom: calc(var(--liquid-size) * 8 * 0.0625);
+  padding-block: calc(var(--liquid-size) * 4 * 0.0625);
+  padding-inline: calc(var(--liquid-size) * 10 * 0.0625);
+  border-radius: calc(var(--liquid-size) * 8 * 0.0625);
+  background: rgba(68, 157, 208, 0.8);
+  color: #fff;
+}
+
+.p-doctor-info__title {
+  font-size: calc(var(--liquid-size) * 14 * 0.0625);
+}
+
+.p-doctor-info__name {
+  font-size: calc(var(--liquid-size) * 32 * 0.0625);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.p-doctor__list {
+  font-size: calc(var(--liquid-size) * 13 * 0.0625);
+  font-weight: 500;
+}
+.p-doctor__list > li {
+  display: flex;
+  line-height: 1.7;
+}
+.p-doctor__list > li::before {
+  content: "・";
+}
+
+.p-doctor-biography {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+}
+
+.p-doctor-biography__title {
+  font-size: calc(var(--liquid-size) * 20 * 0.0625);
+  color: #449dd0;
+}
+
+/* 診療の流れ
+  --------------------------------------------------------- */
+.p-flow {
+  display: flex;
+  justify-content: center;
+  padding-block: calc(var(--liquid-size) * 32 * 0.0625);
+}
+
+.p-flow__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
+
+.p-flow__list {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 24 * 0.0625);
+  padding-top: calc(var(--liquid-size) * 24 * 0.0625);
+}
+
+.p-flow-card {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+  padding: calc(var(--liquid-size) * 24 * 0.0625) calc(var(--liquid-size) * 16 * 0.0625) calc(var(--liquid-size) * 26 * 0.0625);
+  border-radius: calc(var(--liquid-size) * 10 * 0.0625);
+  background: #eef6ff;
+}
+
+.p-flow-card__title-area {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+}
+
+.p-flow-card__step-icon {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--liquid-size) * 46 * 0.0625);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #449dd0;
+  color: #fff;
+  font-size: calc(var(--liquid-size) * 7 * 0.0625);
+  font-weight: 700;
+}
+.p-flow-card__step-icon > .m-large-en {
+  font-family: arial, "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--liquid-size) * 22 * 0.0625);
+  line-height: 1;
+}
+
+.p-flow-card__title {
+  font-size: calc(var(--liquid-size) * 22 * 0.0625);
+  color: #449dd0;
+  font-weight: 700;
+}
+
+.p-flow-card__img {
+  width: 100%;
+  height: 100%;
+}
+
+.p-flow-card__text {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* アクセス
+  --------------------------------------------------------- */
+.p-access {
+  display: flex;
+  justify-content: center;
+  padding-block: calc(var(--liquid-size) * 32 * 0.0625);
+}
+
+.p-access__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
+
+.p-access__contents {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+  padding-block: calc(var(--liquid-size) * 24 * 0.0625) calc(var(--liquid-size) * 16 * 0.0625);
+}
+
+.p-clinic-info {
+  border-top: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.p-clinic-info__group {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+  padding: calc(var(--liquid-size) * 15 * 0.0625);
+}
+.p-clinic-info__group:not(:last-child) {
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.p-clinic-info__title {
+  font-weight: 700;
+}
+
+.p-clinic-info__desc {
+  font-weight: 500;
+  font-size: calc(var(--liquid-size) * 14 * 0.0625);
+}
+
+.p-consultation-hours {
+  border-radius: calc(var(--liquid-size) * 8 * 0.0625);
+  background: #eef6ff;
+  overflow: clip;
+  padding-bottom: calc(var(--liquid-size) * 16 * 0.0625);
+}
+
+.p-consultation-hours__table {
+  width: 100%;
+}
+.p-consultation-hours__table caption {
+  caption-side: bottom;
+  font-weight: 700;
+  font-size: calc(var(--liquid-size) * 12 * 0.0625);
+  text-align: left;
+  padding-inline: calc(var(--liquid-size) * 16 * 0.0625);
+}
+.p-consultation-hours__table tr {
+  display: flex;
+  justify-content: space-between;
+  padding: calc(var(--liquid-size) * 16 * 0.0625);
+}
+.p-consultation-hours__table tr:not(:last-child) {
+  border-bottom: 1px solid #b5b5b5;
+}
+.p-consultation-hours__table th {
+  width: calc(var(--liquid-size) * 14 * 0.0625);
+  font-size: calc(var(--liquid-size) * 13 * 0.0625);
+  font-weight: 700;
+  text-align: center;
+}
+.p-consultation-hours__table th.m-row-header {
+  width: calc(var(--liquid-size) * 86 * 0.0625);
+  flex-shrink: 0;
+  text-align: left;
+}
+.p-consultation-hours__table td {
+  width: calc(var(--liquid-size) * 14 * 0.0625);
+  font-size: calc(var(--liquid-size) * 10 * 0.0625);
+  color: #449dd0;
+  text-align: center;
+}
+.p-consultation-hours__table td.m-black {
+  color: #333;
+}
+
+.p-google-map {
+  border-radius: calc(var(--liquid-size) * 8 * 0.0625);
+  overflow: clip;
+}
+
+/* よくある問い合わせ
+  --------------------------------------------------------- */
+.p-faq {
+  display: flex;
+  justify-content: center;
+  padding-block: calc(var(--liquid-size) * 32 * 0.0625);
+}
+
+.p-faq__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: var(--contents);
+}
+
+.p-faq__lists {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+  width: 100%;
+  padding-top: calc(var(--liquid-size) * 24 * 0.0625);
+}
+
+/* フッター
+  --------------------------------------------------------- */
+.p-footer {
+  display: flex;
+  justify-content: center;
+  padding-block: calc(var(--liquid-size) * 20 * 0.0625);
+  background: #eef6ff;
+  margin-bottom: calc(var(--liquid-size) * 80 * 0.0625);
+}
+
+.p-footer__inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: calc(var(--liquid-size) * 16 * 0.0625);
+  width: var(--contents);
+}
+
+.p-footer__address {
+  font-size: calc(var(--liquid-size) * 14 * 0.0625);
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+
+/* 追随CTA
+  --------------------------------------------------------- */
+.p-fixed-cta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: calc(var(--liquid-size) * 80 * 0.0625);
+  background: #eef6ff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.p-fixed-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--liquid-size) * 8 * 0.0625);
+  width: var(--contents);
+}
+
+.p-fixed-cta__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(var(--liquid-size) * 31 * 0.0625);
+  border-radius: 100vmax;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.5;
+  padding-inline: calc(var(--liquid-size) * 13 * 0.0625) calc(var(--liquid-size) * 9 * 0.0625);
+  font-size: calc(var(--liquid-size) * 11 * 0.0625);
+  font-weight: 700;
+}
+.p-fixed-cta__button.m-reserve {
+  background: #449dd0;
+}
+.p-fixed-cta__button.m-consult {
+  background: #06c755;
+}
+.p-fixed-cta__button::before, .p-fixed-cta__button::after {
+  content: "";
+  flex-shrink: 0;
+  background-position: center;
+  background-size: cover;
+  aspect-ratio: 1/1;
+}
+.p-fixed-cta__button::before {
+  width: calc(var(--liquid-size) * 18 * 0.0625);
+}
+.p-fixed-cta__button.m-reserve::before {
+  background-image: url(../images/icon-reserve.svg);
+}
+.p-fixed-cta__button.m-consult::before {
+  background-image: url(../images/icon-consult.svg);
+}
+.p-fixed-cta__button::after {
+  width: calc(var(--liquid-size) * 14 * 0.0625);
+  background-image: url(../images/icon-right-arrow.svg);
+}
+
+/* アニメーション
+  --------------------------------------------------------- */
+@keyframes shine {
+  0% {
+    background-position: right center;
+  }
+  20% {
+    background-position: right center;
+  }
+  25% {
+    background-position: left center;
+  }
+  100% {
+    background-position: left center;
+  }
+}
