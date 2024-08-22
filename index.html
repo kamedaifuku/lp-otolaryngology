@@ -136,7 +136,7 @@
           <div class="p-concern__caution">
             <p class="m-small">一つでも思い当たる方は・・・</p>
             <p>
-              <em class="m-decoration c-stroke-white">睡眠時無呼吸症候群</em>の<br>
+              <em class="m-decoration c-stroke-white">睡眠時無呼吸症候群</em>の<br class="c-sp-only">
               可能性があります！
             </p>
           </div>
@@ -169,7 +169,7 @@
             </div>
           </div>
           <h3 class="p-sleep-apnea__caution">放置すると・・・</h3>
-          <div class="p-sleep-apnea__texts">
+          <div class="p-sleep-apnea__texts m-wide">
             <p>呼吸が止まることで血液中の酸素濃度が低下すると、<em class="c-em-primary">心臓や脳の血管に負担</em>がかかります。</p>
           </div>
           <ul class="p-sleep-apnea__risk">
@@ -187,7 +187,7 @@
                   <p class="p-risk-card__etc">なども・・・</p>
                 </div>
               </div>
-              <p class="p-sleep-apnea__references"><small>
+              <p class="p-risk-card__references"><small>
                   (参考文献)<br>
                   Day–Night Pattern of Sudden Death in Obstructive Sleep Apnea
                 </small></p>
@@ -201,7 +201,7 @@
                   <img src="./images/img-risk-graph.webp" loading="lazy" alt="交通事故の発生リスクの比較図" width="244" height="99">
                 </div>
               </div>
-              <p class="p-sleep-apnea__references"><small>
+              <p class="p-risk-card__references"><small>
                   (参考文献)<br>
                   「睡眠時無呼吸症候群(ＳＡＳ)を正しく知ろう」リーフレット
                 </small></p>
@@ -212,7 +212,10 @@
             <em class="c-em-primary m-large">早期の治療をおすすめします!</em>
           </p>
           <div class="p-sleep-apnea__cured-img">
-            <img src="./images/img-recovery.webp" loading="lazy" alt="気持ちの良い目覚めのイメージ" width="309" height="345">
+            <picture>
+              <source srcset="./images/img-recovery-pc.webp" media="(width >= 768px)">
+              <img src="./images/img-recovery.webp" loading="lazy" alt="気持ちの良い目覚めのイメージ" width="309" height="345">
+            </picture>
           </div>
         </div>
       </section>
@@ -227,7 +230,7 @@
             </div>
             <div class="p-about-clinic__desc">
               <p>
-                「みみ・はな・のど」の専門医として<br>
+                「みみ・はな・のど」の専門医として<br class="c-sp-only">
                 症状にあった治療で皆様の健康に寄り添っています。
               </p>
               <ul class="p-outpatient-icons">
@@ -631,8 +634,12 @@
     <!-- fixed menu -->
     <div class="l-fixed-menu p-fixed-cta">
       <div class="p-fixed-cta__inner">
-        <a href="#" class="p-fixed-cta__button m-consult">LINEから相談する</a>
-        <a href="#" class="p-fixed-cta__button m-reserve">LINEから予約する</a>
+        <a href="#" class="p-fixed-cta__button m-consult">
+          <p><span class="c-pc-only">今すぐ</span><span class="c-sp-only">LINEから</span>相談する</p>
+        </a>
+        <a href="#" class="p-fixed-cta__button m-reserve">
+          <p><span class="c-pc-only">今すぐ</span><span class="c-sp-only">LINEから</span>予約する</p>
+        </a>
       </div>
     </div>
     <!-- end fixed menu -->
