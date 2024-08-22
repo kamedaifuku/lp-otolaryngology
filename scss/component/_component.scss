@@ -134,6 +134,13 @@
       font-size: liquid(36);
     }
   }
+
+  @media (any-hover: hover) {
+    transition: scale 0.25s ease-in-out;
+    &:hover {
+      scale: 1.05;
+    }
+  }
 }
 
 // 販促テキスト用
@@ -429,6 +436,11 @@
       rotate: 0deg;
     }
   }
+
+  @include mq() {
+    padding: liquid(14) liquid(24) liquid(14) liquid(16);
+    font-size: liquid(18);
+  }
 }
 
 .c-accordion__answer {
@@ -465,6 +477,9 @@
     background: $c-primary;
     color: $c-white;
   }
+  @include mq() {
+    gap: liquid(16);
+  }
 }
 
 .c-accordion__answer-texts {
@@ -472,4 +487,8 @@
   flex-flow: column;
   gap: liquid(8);
   line-height: 1.6;
+
+  @include mq() {
+    font-size: liquid(18);
+  }
 }

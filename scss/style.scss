@@ -47,6 +47,11 @@
   align-items: center;
   width: var(--contents);
   padding-block: pxToRem(11);
+
+  @include mq() {
+    width: min(liquid(1200), 100%);
+    padding-right: liquid(30);
+  }
 }
 
 .p-header__title {
@@ -1412,6 +1417,9 @@
   display: flex;
   justify-content: center;
   padding-block: liquid(32);
+  @include mq() {
+    padding-block: liquid(80);
+  }
 }
 
 .p-flow__inner {
@@ -1425,6 +1433,12 @@
   flex-flow: column;
   gap: liquid(24);
   padding-top: liquid(24);
+  @include mq() {
+    margin-top: liquid(84);
+    padding: liquid(60) liquid(24);
+    border-radius: liquid(20);
+    background: $c-secondary;
+  }
 }
 
 .p-flow-card {
@@ -1434,12 +1448,25 @@
   padding: liquid(24) liquid(16) liquid(26);
   border-radius: liquid(10);
   background: $c-secondary;
+  @include mq() {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "title title"
+      "img   text";
+    gap: liquid(24) liquid(36);
+    padding: liquid(36) liquid(36) liquid(32) liquid(12);
+    background: transparent;
+  }
 }
 
 .p-flow-card__title-area {
   display: flex;
   align-items: center;
   gap: liquid(16);
+  @include mq() {
+    grid-area: title;
+  }
 }
 
 .p-flow-card__step-icon {
@@ -1458,8 +1485,13 @@
   & > .m-large-en {
     font-family: $font-en-2;
     font-weight: 700;
-    font-size: liquid(22);
+    font-size: 3.142em;
     line-height: 1;
+  }
+
+  @include mq() {
+    width: liquid(70);
+    font-size: liquid(11);
   }
 }
 
@@ -1467,16 +1499,32 @@
   font-size: liquid(22);
   color: $c-primary;
   font-weight: 700;
+  @include mq() {
+    font-size: liquid(32);
+  }
 }
 
 .p-flow-card__img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  @include mq() {
+    grid-area: img;
+    aspect-ratio: 476/ 288;
+  }
 }
 
 .p-flow-card__text {
   text-align: justify;
   line-height: 1.6;
+  @include mq() {
+    grid-area: text;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    font-size: liquid(22);
+    letter-spacing: 0.04em;
+  }
 }
 
 /* アクセス
@@ -1485,6 +1533,9 @@
   display: flex;
   justify-content: center;
   padding-block: liquid(32);
+  @include mq() {
+    padding-block: liquid(80);
+  }
 }
 
 .p-access__inner {
@@ -1500,11 +1551,25 @@
   gap: liquid(16);
   width: 100%;
   padding-block: liquid(24) liquid(16);
+
+  @include mq() {
+    display: grid;
+    grid-template-columns: liquid(560) liquid(520);
+    grid-template-areas:
+      "info  map"
+      "hours map";
+    gap: liquid(19);
+    width: 100%;
+    padding-block: liquid(62) liquid(16);
+  }
 }
 
 .p-clinic-info {
   border-top: 1px solid $c-light-gray-4;
   border-bottom: 1px solid $c-light-gray-4;
+  @include mq() {
+    grid-area: "info";
+  }
 }
 
 .p-clinic-info__group {
@@ -1516,15 +1581,27 @@
   &:not(:last-child) {
     border-bottom: 1px solid $c-light-gray-4;
   }
+  @include mq() {
+    flex-flow: row;
+    align-items: center;
+    gap: 0;
+    padding: liquid(24);
+  }
 }
 
 .p-clinic-info__title {
   font-weight: 700;
+  @include mq() {
+    width: liquid(140);
+  }
 }
 
 .p-clinic-info__desc {
   font-weight: 500;
   font-size: liquid(14);
+  @include mq() {
+    font-size: liquid(16);
+  }
 }
 
 .p-consultation-hours {
@@ -1532,6 +1609,12 @@
   background: $c-secondary;
   overflow: clip;
   padding-bottom: liquid(16);
+
+  @include mq() {
+    border-radius: liquid(12);
+    padding-block: liquid(12);
+    padding-inline: liquid(10);
+  }
 }
 
 .p-consultation-hours__table {
@@ -1578,11 +1661,54 @@
       color: $c-dark-gray-1;
     }
   }
+  @include mq() {
+    grid-area: hours;
+
+    & caption {
+      font-size: liquid(14);
+    }
+
+    & tr {
+      padding: 0;
+    }
+
+    & th {
+      width: liquid(60);
+      font-size: liquid(14);
+      padding-block: liquid(12);
+      border-left: 1px solid $c-light-gray-4;
+
+      &.m-row-header {
+        width: liquid(120);
+        text-align: center;
+        border-left: none;
+        &.m-large {
+          font-size: liquid(16);
+        }
+      }
+    }
+
+    & td {
+      width: liquid(60);
+      font-size: liquid(16);
+      padding-block: liquid(12);
+      border-left: 1px solid $c-light-gray-4;
+    }
+  }
 }
 
 .p-google-map {
   border-radius: liquid(8);
   overflow: clip;
+  @include mq() {
+    grid-area: map;
+
+    & > iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: liquid(20);
+    }
+  }
 }
 
 /* よくある問い合わせ
@@ -1591,6 +1717,10 @@
   display: flex;
   justify-content: center;
   padding-block: liquid(32);
+
+  @include mq() {
+    padding-block: liquid(76) liquid(80);
+  }
 }
 
 .p-faq__inner {
@@ -1604,8 +1734,13 @@
   display: flex;
   flex-flow: column;
   gap: liquid(16);
-  width: 100%;
+  width: min(100%, liquid(880));
   padding-top: liquid(24);
+
+  @include mq() {
+    gap: liquid(26);
+    padding-top: liquid(60);
+  }
 }
 
 /* フッター
@@ -1615,6 +1750,9 @@
   justify-content: center;
   padding-block: liquid(20) liquid(100);
   background: $c-secondary;
+  @include mq() {
+    padding-block: liquid(60);
+  }
 }
 
 .p-footer__inner {
@@ -1623,6 +1761,24 @@
   align-items: center;
   gap: liquid(16);
   width: var(--contents);
+  @include mq() {
+    width: liquid(1000);
+    flex-flow: row;
+    justify-content: space-between;
+  }
+}
+
+.p-footer__logo {
+  aspect-ratio: 151/ 47;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include mq() {
+    width: liquid(151);
+  }
 }
 
 .p-footer__address {
@@ -1630,6 +1786,11 @@
   font-weight: 500;
   font-style: normal;
   text-align: center;
+
+  @include mq() {
+    font-size: liquid(16);
+    text-align: left;
+  }
 }
 
 /* 追随CTA
@@ -1641,6 +1802,18 @@
   height: liquid(80);
   background: $c-secondary;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  bottom: env(safe-area-inset-bottom, 0);
+
+  @include mq() {
+    flex-flow: column;
+    width: 70px;
+    right: 0;
+    top: calc((100vh - liquid(554)) / 2);
+    bottom: calc((100vh - liquid(554)) / 2);
+    margin-block: auto;
+    background: none;
+    box-shadow: none;
+  }
 }
 
 .p-fixed-cta__inner {
@@ -1649,6 +1822,15 @@
   justify-content: center;
   gap: liquid(8);
   width: var(--contents);
+
+  @include mq() {
+    display: flex;
+    flex-flow: column;
+    width: liquid(70);
+    height: liquid(554);
+    justify-content: center;
+    gap: 0;
+  }
 }
 
 .p-fixed-cta__button {
@@ -1699,6 +1881,38 @@
   &::after {
     width: liquid(14);
     background-image: url(../images/icon-right-arrow.svg);
+  }
+
+  @include mq() {
+    justify-content: center;
+    gap: 0.5em;
+    width: 100%;
+    height: 50%;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.25em;
+    font-size: liquid(18);
+
+    &.m-reserve {
+      border-radius: 0 0 0 liquid(10);
+    }
+    &.m-consult {
+      border-radius: liquid(10) 0 0 0;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      flex-shrink: 0;
+      background-position: center;
+      background-size: cover;
+      aspect-ratio: 1/ 1;
+    }
+    &::before {
+      width: liquid(24);
+    }
+    &::after {
+      width: liquid(26);
+    }
   }
 }
 
