@@ -34,7 +34,6 @@
 .l-fixed-menu {
   position: fixed;
   bottom: env(safe-area-inset-bottom, 0);
-  translate: 0 liquid(20);
 
   @include mq(pc) {
     display: none;
