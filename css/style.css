@@ -1887,6 +1887,11 @@ em {
   justify-content: center;
   padding-block: calc(var(--liquid-size) * 32 * 0.0625) calc(var(--liquid-size) * 40 * 0.0625);
 }
+@media (width >= 768px) {
+  .p-about-doctor {
+    padding-block: calc(var(--liquid-size) * 80 * 0.0625);
+  }
+}
 
 .p-about-doctor__inner {
   display: flex;
@@ -1895,13 +1900,22 @@ em {
   gap: calc(var(--liquid-size) * 24 * 0.0625);
   width: var(--contents);
 }
+@media (width >= 768px) {
+  .p-about-doctor__inner {
+    gap: calc(var(--liquid-size) * 48 * 0.0625);
+  }
+}
 
 .p-about-doctor__title {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  gap: calc(var(--liquid-size) * 3 * 0.0625);
   font-size: calc(var(--liquid-size) * 24 * 0.0625);
+  text-align: center;
+  line-height: 1.5;
+}
+@media (width >= 768px) {
+  .p-about-doctor__title {
+    font-size: calc(var(--liquid-size) * 36 * 0.0625);
+    line-height: 1.4;
+  }
 }
 
 .p-about-doctor__contents {
@@ -1913,11 +1927,24 @@ em {
   border-radius: calc(var(--liquid-size) * 10 * 0.0625);
   background: #eef6ff;
 }
+@media (width >= 768px) {
+  .p-about-doctor__contents {
+    flex-flow: row;
+    gap: calc(var(--liquid-size) * 90 * 0.0625);
+    padding: calc(var(--liquid-size) * 56 * 0.0625);
+    border-radius: calc(var(--liquid-size) * 20 * 0.0625);
+  }
+}
 
 .p-doctor-info {
   display: flex;
   flex-flow: column;
   gap: calc(var(--liquid-size) * 16 * 0.0625);
+}
+@media (width >= 768px) {
+  .p-doctor-info {
+    flex: 1 0;
+  }
 }
 
 .p-doctor-info__sub-box {
@@ -1928,6 +1955,11 @@ em {
 }
 .p-doctor-info__sub-box > * {
   grid-area: 1/1/-1/-1;
+}
+@media (width >= 768px) {
+  .p-doctor-info__sub-box {
+    padding-inline: calc(var(--liquid-size) * 10 * 0.0625);
+  }
 }
 
 .p-doctor-info__img {
@@ -1949,15 +1981,33 @@ em {
   background: rgba(68, 157, 208, 0.8);
   color: #fff;
 }
+@media (width >= 768px) {
+  .p-doctor-info__name-box {
+    padding-block: calc(var(--liquid-size) * 6 * 0.0625);
+    padding-inline: calc(var(--liquid-size) * 12 * 0.0625);
+    border-radius: calc(var(--liquid-size) * 11 * 0.0625);
+    bottom: calc(var(--liquid-size) * 10 * 0.0625);
+  }
+}
 
 .p-doctor-info__title {
   font-size: calc(var(--liquid-size) * 14 * 0.0625);
+}
+@media (width >= 768px) {
+  .p-doctor-info__title {
+    font-size: calc(var(--liquid-size) * 19 * 0.0625);
+  }
 }
 
 .p-doctor-info__name {
   font-size: calc(var(--liquid-size) * 32 * 0.0625);
   line-height: 1;
   font-weight: 700;
+}
+@media (width >= 768px) {
+  .p-doctor-info__name {
+    font-size: calc(var(--liquid-size) * 43 * 0.0625);
+  }
 }
 
 .p-doctor__list {
@@ -1971,16 +2021,38 @@ em {
 .p-doctor__list > li::before {
   content: "・";
 }
+@media (width >= 768px) {
+  .p-doctor__list {
+    font-size: calc(var(--liquid-size) * 18 * 0.0625);
+  }
+  .p-doctor__list > li {
+    line-height: 1.9;
+  }
+  .p-doctor__list.m-biography {
+    font-size: calc(var(--liquid-size) * 20 * 0.0625);
+  }
+}
 
 .p-doctor-biography {
   display: flex;
   flex-flow: column;
   gap: calc(var(--liquid-size) * 8 * 0.0625);
 }
+@media (width >= 768px) {
+  .p-doctor-biography {
+    justify-content: center;
+    flex: 1.1 0;
+  }
+}
 
 .p-doctor-biography__title {
   font-size: calc(var(--liquid-size) * 20 * 0.0625);
   color: #449dd0;
+}
+@media (width >= 768px) {
+  .p-doctor-biography__title {
+    font-size: calc(var(--liquid-size) * 32 * 0.0625);
+  }
 }
 
 /* 診療の流れ

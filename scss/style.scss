@@ -1248,6 +1248,10 @@
   display: flex;
   justify-content: center;
   padding-block: liquid(32) liquid(40);
+
+  @include mq() {
+    padding-block: liquid(80);
+  }
 }
 
 .p-about-doctor__inner {
@@ -1256,14 +1260,20 @@
   align-items: center;
   gap: liquid(24);
   width: var(--contents);
+
+  @include mq() {
+    gap: liquid(48);
+  }
 }
 
 .p-about-doctor__title {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  gap: liquid(3);
   font-size: liquid(24);
+  text-align: center;
+  line-height: 1.5;
+  @include mq() {
+    font-size: liquid(36);
+    line-height: 1.4;
+  }
 }
 
 .p-about-doctor__contents {
@@ -1274,12 +1284,23 @@
   padding: liquid(24) liquid(16);
   border-radius: liquid(10);
   background: $c-secondary;
+
+  @include mq() {
+    flex-flow: row;
+    gap: liquid(90);
+    padding: liquid(56);
+    border-radius: liquid(20);
+  }
 }
 
 .p-doctor-info {
   display: flex;
   flex-flow: column;
   gap: liquid(16);
+
+  @include mq() {
+    flex: 1 0;
+  }
 }
 
 .p-doctor-info__sub-box {
@@ -1290,6 +1311,10 @@
 
   & > * {
     grid-area: 1/ 1/ -1/ -1;
+  }
+
+  @include mq() {
+    padding-inline: liquid(10);
   }
 }
 
@@ -1310,16 +1335,29 @@
   border-radius: liquid(8);
   background: $c-primary-a80;
   color: $c-white;
+
+  @include mq() {
+    padding-block: liquid(6);
+    padding-inline: liquid(12);
+    border-radius: liquid(11);
+    bottom: liquid(10);
+  }
 }
 
 .p-doctor-info__title {
   font-size: liquid(14);
+  @include mq() {
+    font-size: liquid(19);
+  }
 }
 
 .p-doctor-info__name {
   font-size: liquid(32);
   line-height: 1;
   font-weight: 700;
+  @include mq() {
+    font-size: liquid(43);
+  }
 }
 
 .p-doctor__list {
@@ -1334,17 +1372,38 @@
       content: "・";
     }
   }
+
+  @include mq() {
+    font-size: liquid(18);
+
+    & > li {
+      line-height: 1.9;
+    }
+
+    &.m-biography {
+      font-size: liquid(20);
+    }
+  }
 }
 
 .p-doctor-biography {
   display: flex;
   flex-flow: column;
   gap: liquid(8);
+
+  @include mq() {
+    justify-content: center;
+    flex: 1.1 0;
+  }
 }
 
 .p-doctor-biography__title {
   font-size: liquid(20);
   color: $c-primary;
+
+  @include mq() {
+    font-size: liquid(32);
+  }
 }
 
 /* 診療の流れ
