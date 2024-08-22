@@ -2463,6 +2463,7 @@ em {
 
 .p-footer__logo {
   aspect-ratio: 151/47;
+  width: calc(var(--liquid-size) * 139 * 0.0625);
 }
 .p-footer__logo img {
   width: 100%;
