@@ -33,7 +33,7 @@
 
 .l-fixed-menu {
   position: fixed;
-  bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
 
   @include mq(pc) {
     display: none;

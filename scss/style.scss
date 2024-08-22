@@ -1261,9 +1261,8 @@
 .p-footer {
   display: flex;
   justify-content: center;
-  padding-block: liquid(20);
+  padding-block: liquid(20) liquid(100);
   background: $c-secondary;
-  margin-bottom: liquid(80);
 }
 
 .p-footer__inner {
