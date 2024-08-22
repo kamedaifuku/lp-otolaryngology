@@ -185,7 +185,7 @@ em {
 
 .l-fixed-menu {
   position: fixed;
-  bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
 }
 @media (width >= 768px) {
   .l-fixed-menu {
@@ -1862,9 +1862,8 @@ em {
 .p-footer {
   display: flex;
   justify-content: center;
-  padding-block: calc(var(--liquid-size) * 20 * 0.0625);
+  padding-block: calc(var(--liquid-size) * 20 * 0.0625) calc(var(--liquid-size) * 100 * 0.0625);
   background: #eef6ff;
-  margin-bottom: calc(var(--liquid-size) * 80 * 0.0625);
 }
 
 .p-footer__inner {
