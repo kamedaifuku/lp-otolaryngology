@@ -2249,9 +2249,10 @@ em {
 @media (width >= 768px) {
   .p-access__contents {
     display: grid;
-    grid-template-columns: min(var(--liquid-size) * 560 * 0.0625, 56%) min(var(--liquid-size) * 520 * 0.0625, 52%);
+    grid-template-columns: min(var(--liquid-size) * 560 * 0.0625, 55%) min(var(--liquid-size) * 520 * 0.0625, 50%);
     grid-template-areas: "info  map" "hours map";
     gap: calc(var(--liquid-size) * 19 * 0.0625);
+    justify-content: center;
     width: 100%;
     padding-block: calc(var(--liquid-size) * 62 * 0.0625) calc(var(--liquid-size) * 16 * 0.0625);
   }

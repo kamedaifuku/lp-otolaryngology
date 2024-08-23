@@ -1558,11 +1558,12 @@
 
   @include mq() {
     display: grid;
-    grid-template-columns: min(liquid(560), 56%) min(liquid(520), 52%);
+    grid-template-columns: min(liquid(560), 55%) min(liquid(520), 50%);
     grid-template-areas:
       "info  map"
       "hours map";
     gap: liquid(19);
+    justify-content: center;
     width: 100%;
     padding-block: liquid(62) liquid(16);
   }
