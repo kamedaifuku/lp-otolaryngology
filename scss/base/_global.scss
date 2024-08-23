@@ -8,15 +8,12 @@
 // カスタムプロパティ定義
 :root {
   // コンテンツ幅
-  --contents-pc: min(100%, #{pxToRem(1100)});
+  --contents-pc: min(calc(100% - #{pxToRem(48)}), #{pxToRem(1100)});
   --contents-sp: min(100%, #{pxToRem(345)});
-
-  //左右余白
-  --side-space: #{pxToRem(15)};
 
   // PC版とスマホ版のベース文字サイズ
   // PC版 最小値: SP版デザインへのブレークポイント,　最大値:コンテンツ幅
-  --liquid-size-pc: #{clampWithPxToRem(11, 16, 768, 1100)};
+  --liquid-size-pc: #{clampWithPxToRem(11, 16, 768, 1200)};
   // SP版 最小値: 表示を配慮する最小幅,　最大値: SP版デザインのアートボード幅
   --liquid-size-sp: #{clampWithPxToRem(12, 16, 300, 375)};
 

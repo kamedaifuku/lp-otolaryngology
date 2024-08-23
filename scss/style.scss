@@ -38,7 +38,10 @@
 .p-header {
   display: flex;
   justify-content: center;
-  padding-inline: var(--side-space);
+  padding-inline: pxToRem(15);
+  @include mq() {
+    padding-inline: pxToRem(40);
+  }
 }
 
 .p-header__inner {
@@ -106,12 +109,13 @@
   padding-inline: liquid(10);
 
   @include mq() {
-    width: min(100%, liquid(1260));
+    width: min(100%, liquid(1288));
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
       "mv   mv"
       "desc fee"
       "link link";
+    padding-inline: liquid(24);
   }
 }
 
@@ -1554,7 +1558,7 @@
 
   @include mq() {
     display: grid;
-    grid-template-columns: liquid(560) liquid(520);
+    grid-template-columns: min(liquid(560), 56%) min(liquid(520), 52%);
     grid-template-areas:
       "info  map"
       "hours map";

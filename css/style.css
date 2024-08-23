@@ -118,10 +118,9 @@
 }
 
 :root {
-  --contents-pc: min(100%, 68.75rem);
+  --contents-pc: min(calc(100% - 3rem), 68.75rem);
   --contents-sp: min(100%, 21.5625rem);
-  --side-space: 0.9375rem;
-  --liquid-size-pc: clamp(0.6875rem, 1.506vw - 0.035rem, 1rem);
+  --liquid-size-pc: clamp(0.6875rem, 1.157vw + 0.132rem, 1rem);
   --liquid-size-sp: clamp(0.75rem, 5.333vw - 0.25rem, 1rem);
   --liquid-size: var(--liquid-size-sp);
   --contents: var(--contents-sp);
@@ -542,7 +541,7 @@ em {
   grid-template-columns: calc(var(--liquid-size) * 37 * 0.0625) 1fr calc(var(--liquid-size) * 16 * 0.0625);
   align-items: center;
   gap: calc(var(--liquid-size) * 12 * 0.0625);
-  width: var(--contents);
+  width: 100%;
   padding: calc(var(--liquid-size) * 16 * 0.0625);
   font-weight: 700;
   background: #fff;
@@ -657,7 +656,12 @@ em {
 .p-header {
   display: flex;
   justify-content: center;
-  padding-inline: var(--side-space);
+  padding-inline: 0.9375rem;
+}
+@media (width >= 768px) {
+  .p-header {
+    padding-inline: 2.5rem;
+  }
 }
 
 .p-header__inner {
@@ -726,9 +730,10 @@ em {
 }
 @media (width >= 768px) {
   .p-fv__inner {
-    width: min(100%, var(--liquid-size) * 1260 * 0.0625);
+    width: min(100%, var(--liquid-size) * 1288 * 0.0625);
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas: "mv   mv" "desc fee" "link link";
+    padding-inline: calc(var(--liquid-size) * 24 * 0.0625);
   }
 }
 
@@ -2244,7 +2249,7 @@ em {
 @media (width >= 768px) {
   .p-access__contents {
     display: grid;
-    grid-template-columns: calc(var(--liquid-size) * 560 * 0.0625) calc(var(--liquid-size) * 520 * 0.0625);
+    grid-template-columns: min(var(--liquid-size) * 560 * 0.0625, 56%) min(var(--liquid-size) * 520 * 0.0625, 52%);
     grid-template-areas: "info  map" "hours map";
     gap: calc(var(--liquid-size) * 19 * 0.0625);
     width: 100%;

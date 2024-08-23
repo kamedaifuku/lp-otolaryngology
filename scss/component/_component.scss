@@ -383,7 +383,7 @@
   grid-template-columns: liquid(37) 1fr liquid(16);
   align-items: center;
   gap: liquid(12);
-  width: var(--contents);
+  width: 100%;
   padding: liquid(16);
   font-weight: 700;
   background: $c-white;
