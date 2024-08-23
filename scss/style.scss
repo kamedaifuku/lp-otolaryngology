@@ -1624,43 +1624,53 @@
 
 .p-consultation-hours__table {
   width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
 
   & caption {
     caption-side: bottom;
     font-weight: 700;
     font-size: liquid(12);
     text-align: left;
-    padding-inline: liquid(16);
+    padding-top: liquid(4);
+    padding-inline: liquid(12);
   }
 
   & tr {
-    display: flex;
-    justify-content: space-between;
-    padding: liquid(16);
-
     &:not(:last-child) {
       border-bottom: 1px solid $c-light-gray-4;
     }
   }
 
   & th {
-    width: liquid(14);
+    padding-block: liquid(14);
+    padding-inline: liquid(8);
     font-size: liquid(13);
     font-weight: 700;
     text-align: center;
 
+    &:last-child {
+      padding-right: liquid(16);
+    }
+
     &.m-row-header {
-      width: liquid(86);
-      flex-shrink: 0;
+      width: liquid(110);
+      padding-inline: liquid(16) liquid(8);
+      box-sizing: border-box;
       text-align: left;
     }
   }
 
   & td {
-    width: liquid(14);
-    font-size: liquid(10);
+    padding-block: liquid(16);
+    padding-inline: liquid(8);
+    font-size: liquid(12);
     color: $c-primary;
     text-align: center;
+
+    &:last-child {
+      padding-right: liquid(16);
+    }
 
     &.m-black {
       color: $c-dark-gray-1;
@@ -1673,18 +1683,19 @@
       font-size: liquid(14);
     }
 
-    & tr {
-      padding: 0;
-    }
-
     & th {
       width: liquid(60);
       font-size: liquid(14);
       padding-block: liquid(12);
       border-left: 1px solid $c-light-gray-4;
 
+      &:last-child {
+        padding-right: liquid(8);
+      }
+
       &.m-row-header {
         width: liquid(120);
+        padding-inline: 0;
         text-align: center;
         border-left: none;
         &.m-large {
@@ -1698,6 +1709,10 @@
       font-size: liquid(16);
       padding-block: liquid(12);
       border-left: 1px solid $c-light-gray-4;
+
+      &:last-child {
+        padding-right: liquid(8);
+      }
     }
   }
 }

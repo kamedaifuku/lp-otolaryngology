@@ -2321,38 +2321,45 @@ em {
 
 .p-consultation-hours__table {
   width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 .p-consultation-hours__table caption {
   caption-side: bottom;
   font-weight: 700;
   font-size: calc(var(--liquid-size) * 12 * 0.0625);
   text-align: left;
-  padding-inline: calc(var(--liquid-size) * 16 * 0.0625);
-}
-.p-consultation-hours__table tr {
-  display: flex;
-  justify-content: space-between;
-  padding: calc(var(--liquid-size) * 16 * 0.0625);
+  padding-top: calc(var(--liquid-size) * 4 * 0.0625);
+  padding-inline: calc(var(--liquid-size) * 12 * 0.0625);
 }
 .p-consultation-hours__table tr:not(:last-child) {
   border-bottom: 1px solid #b5b5b5;
 }
 .p-consultation-hours__table th {
-  width: calc(var(--liquid-size) * 14 * 0.0625);
+  padding-block: calc(var(--liquid-size) * 14 * 0.0625);
+  padding-inline: calc(var(--liquid-size) * 8 * 0.0625);
   font-size: calc(var(--liquid-size) * 13 * 0.0625);
   font-weight: 700;
   text-align: center;
 }
+.p-consultation-hours__table th:last-child {
+  padding-right: calc(var(--liquid-size) * 16 * 0.0625);
+}
 .p-consultation-hours__table th.m-row-header {
-  width: calc(var(--liquid-size) * 86 * 0.0625);
-  flex-shrink: 0;
+  width: calc(var(--liquid-size) * 110 * 0.0625);
+  padding-inline: calc(var(--liquid-size) * 16 * 0.0625) calc(var(--liquid-size) * 8 * 0.0625);
+  box-sizing: border-box;
   text-align: left;
 }
 .p-consultation-hours__table td {
-  width: calc(var(--liquid-size) * 14 * 0.0625);
-  font-size: calc(var(--liquid-size) * 10 * 0.0625);
+  padding-block: calc(var(--liquid-size) * 16 * 0.0625);
+  padding-inline: calc(var(--liquid-size) * 8 * 0.0625);
+  font-size: calc(var(--liquid-size) * 12 * 0.0625);
   color: #449dd0;
   text-align: center;
+}
+.p-consultation-hours__table td:last-child {
+  padding-right: calc(var(--liquid-size) * 16 * 0.0625);
 }
 .p-consultation-hours__table td.m-black {
   color: #333;
@@ -2364,17 +2371,18 @@ em {
   .p-consultation-hours__table caption {
     font-size: calc(var(--liquid-size) * 14 * 0.0625);
   }
-  .p-consultation-hours__table tr {
-    padding: 0;
-  }
   .p-consultation-hours__table th {
     width: calc(var(--liquid-size) * 60 * 0.0625);
     font-size: calc(var(--liquid-size) * 14 * 0.0625);
     padding-block: calc(var(--liquid-size) * 12 * 0.0625);
     border-left: 1px solid #b5b5b5;
   }
+  .p-consultation-hours__table th:last-child {
+    padding-right: calc(var(--liquid-size) * 8 * 0.0625);
+  }
   .p-consultation-hours__table th.m-row-header {
     width: calc(var(--liquid-size) * 120 * 0.0625);
+    padding-inline: 0;
     text-align: center;
     border-left: none;
   }
@@ -2386,6 +2394,9 @@ em {
     font-size: calc(var(--liquid-size) * 16 * 0.0625);
     padding-block: calc(var(--liquid-size) * 12 * 0.0625);
     border-left: 1px solid #b5b5b5;
+  }
+  .p-consultation-hours__table td:last-child {
+    padding-right: calc(var(--liquid-size) * 8 * 0.0625);
   }
 }
 
