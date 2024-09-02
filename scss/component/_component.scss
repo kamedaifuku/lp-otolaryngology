@@ -1,7 +1,7 @@
 @use "../base/index" as *;
 // 汎用コンポーネント
 // 汎用タイトル
-.c-common-title {
+h2.c-common-title {
   font-size: liquid(24);
   font-weight: 700;
 
@@ -83,16 +83,16 @@
     }
 
     &.m-reserve::before {
-      background-image: url(../images/icon-reserve.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-reserve.svg);
     }
 
     &.m-consult::before {
-      background-image: url(../images/icon-consult.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-consult.svg);
     }
 
     &::after {
       width: 1.263em;
-      background-image: url(../images/icon-right-arrow.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-right-arrow.svg);
     }
 
     @include mq() {
@@ -173,10 +173,10 @@
       background-repeat: no-repeat;
     }
     &::before {
-      background-image: url(../images/icon-slash-w01-left.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-slash-w01-left.svg);
     }
     &::after {
-      background-image: url(../images/icon-slash-w01-right.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-slash-w01-right.svg);
     }
 
     @include mq() {
@@ -196,10 +196,10 @@
       aspect-ratio: 23/ 17;
     }
     &::before {
-      background-image: url(../images/icon-slash-s-left.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-slash-s-left.svg);
     }
     &::after {
-      background-image: url(../images/icon-slash-s-right.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-slash-s-right.svg);
     }
 
     @include mq() {
@@ -221,11 +221,11 @@
     }
     &::before {
       left: -1.25em;
-      background-image: url(../images/icon-slash-w02-left.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-slash-w02-left.svg);
     }
     &::after {
       right: -1.3em;
-      background-image: url(../images/icon-slash-w02-right.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-slash-w02-right.svg);
     }
 
     @include mq() {
@@ -307,35 +307,35 @@
 
   // fvの特徴
   &.m-features-01::before {
-    background-image: url(../images/icon-features-01.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-features-01.svg);
   }
   &.m-features-02::before {
-    background-image: url(../images/icon-features-02.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-features-02.svg);
   }
   &.m-features-03::before {
-    background-image: url(../images/icon-features-03.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-features-03.svg);
   }
 
   // 病気リスク
   &.m-complications-01::before {
-    background-image: url(../images/icon-complications-01.webp);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-complications-01.webp);
   }
   &.m-complications-02::before {
-    background-image: url(../images/icon-complications-02.webp);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-complications-02.webp);
   }
   &.m-complications-03::before {
-    background-image: url(../images/icon-complications-03.webp);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-complications-03.webp);
   }
 
   // 外来
   &.m-outpatient-01::before {
-    background-image: url(../images/icon-outpatient-01.webp);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-outpatient-01.webp);
   }
   &.m-outpatient-02::before {
-    background-image: url(../images/icon-outpatient-02.webp);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-outpatient-02.webp);
   }
   &.m-outpatient-03::before {
-    background-image: url(../images/icon-outpatient-03.webp);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-outpatient-03.webp);
   }
 
   @include mq() {

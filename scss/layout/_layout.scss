@@ -33,6 +33,8 @@
 
 .l-fixed-menu {
   position: fixed;
+  margin-top: 0 !important;
+  z-index: 1;
 }
 
 // SVGの文字縁取り

@@ -105,7 +105,7 @@
   justify-items: center;
   position: relative;
   z-index: 0;
-  width: min(100%, liquid(375));
+  width: min(100%, liquid(420));
   padding-inline: liquid(10);
 
   @include mq() {
@@ -208,7 +208,7 @@
 }
 
 // fvの構成要素
-.p-fv-catchphrase {
+h2.p-fv-catchphrase {
   place-self: end start;
   display: flex;
   flex-flow: column;
@@ -350,7 +350,7 @@
   display: flex;
   justify-content: center;
   padding-block: liquid(36) liquid(41);
-  background: url(../images/bg-concerns.webp) center/cover;
+  background: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/bg-concerns.webp) center/cover;
 
   @include mq() {
     padding-block: liquid(81) liquid(65);
@@ -364,7 +364,7 @@
   width: min(var(--contents), 95%);
 }
 
-.p-concerns__title {
+h2.p-concerns__title {
   display: flex;
   flex-flow: column;
   gap: 0.8125em;
@@ -392,7 +392,7 @@
     left: 100%;
     width: 0.5em;
     aspect-ratio: 14/ 17;
-    background: url(../images/icon-concerns.svg) center/cover;
+    background: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-concerns.svg) center/cover;
   }
 
   @include mq() {
@@ -445,7 +445,7 @@
     aspect-ratio: 1/ 1;
     border-radius: 50%;
     color: $c-white;
-    background: url(../images/icon-check.svg) center/cover;
+    background: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-check.svg) center/cover;
   }
 
   @include mq() {
@@ -505,7 +505,7 @@
       left: 94%;
       width: 1em;
       aspect-ratio: 22/ 21;
-      background: url(../images/icon-surprise.svg) center/cover;
+      background: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-surprise.svg) center/cover;
     }
   }
 
@@ -521,10 +521,10 @@
 .p-cta {
   display: flex;
   justify-content: center;
-  background: url(../images/bg-cta.webp) center/cover;
+  background: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/bg-cta.webp) center/cover;
 
   @include mq() {
-    background-image: url(../images/bg-cta-pc.webp);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/bg-cta-pc.webp);
   }
 }
 
@@ -669,7 +669,7 @@
   }
 }
 
-.p-sleep-apnea__caution {
+h3.p-sleep-apnea__caution {
   position: relative;
   font-size: liquid(24);
   font-weight: 700;
@@ -682,7 +682,7 @@
     top: -0.542em;
     right: 2.41em;
     aspect-ratio: 22/23;
-    background: url(../images/icon-bad.svg) center/cover;
+    background: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-bad.svg) center/cover;
   }
 
   @include mq() {
@@ -757,7 +757,7 @@
   }
 }
 
-.p-risk-card__title {
+h3.p-risk-card__title {
   flex-shrink: 0;
   align-self: stretch;
   display: flex;
@@ -779,12 +779,12 @@
 
   &.m-complications::after {
     width: 1.3em;
-    background-image: url(../images/icon-health-risk.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-health-risk.svg);
   }
 
   &.m-accident::after {
     width: 1.7em;
-    background-image: url(../images/icon-accident-risk.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-accident-risk.svg);
   }
 
   @include mq() {
@@ -1050,7 +1050,7 @@
     gap: liquid(8);
     &::before {
       width: liquid(34);
-      background-image: url(../images/icon-merits-01.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-merits-01.svg);
     }
   }
   &.m-merits-02 {
@@ -1058,7 +1058,7 @@
     gap: liquid(8);
     &::before {
       width: liquid(46);
-      background-image: url(../images/icon-merits-02.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-merits-02.svg);
     }
   }
   &.m-merits-03 {
@@ -1066,7 +1066,7 @@
     gap: liquid(12);
     &::before {
       width: liquid(42);
-      background-image: url(../images/icon-merits-03.svg);
+      background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-merits-03.svg);
     }
   }
 
@@ -1154,19 +1154,19 @@
   }
 
   &.m-reason-01::after {
-    background-image: url(../images/icon-reason-01.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-reason-01.svg);
   }
   &.m-reason-02::after {
-    background-image: url(../images/icon-reason-02.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-reason-02.svg);
   }
   &.m-reason-03::after {
-    background-image: url(../images/icon-reason-03.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-reason-03.svg);
   }
   &.m-reason-04:after {
-    background-image: url(../images/icon-reason-04.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-reason-04.svg);
   }
   &.m-reason-05::after {
-    background-image: url(../images/icon-reason-05.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-reason-05.svg);
   }
 
   @include mq() {
@@ -1223,7 +1223,7 @@
   }
 }
 
-.p-reason-card__title {
+h3.p-reason-card__title {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -1275,7 +1275,7 @@
   }
 }
 
-.p-about-doctor__title {
+h2.p-about-doctor__title {
   font-size: liquid(24);
   text-align: center;
   line-height: 1.5;
@@ -1499,7 +1499,7 @@
   }
 }
 
-.p-flow-card__title {
+h3.p-flow-card__title {
   font-size: liquid(22);
   color: $c-primary;
   font-weight: 700;
@@ -1807,6 +1807,7 @@
   font-weight: 500;
   font-style: normal;
   text-align: center;
+  color: #333;
 
   @include mq() {
     font-size: liquid(16);
@@ -1831,11 +1832,12 @@
   }
 
   @include mq() {
+    height: auto;
     flex-flow: column;
     width: 70px;
     right: 0;
     top: calc((100vh - liquid(554)) / 2);
-    bottom: calc((100vh - liquid(554)) / 2);
+    // bottom: calc((100vh - liquid(554)) / 2);
     margin-block: auto;
     background: none;
     box-shadow: none;
@@ -1897,16 +1899,16 @@
   }
 
   &.m-reserve::before {
-    background-image: url(../images/icon-reserve.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-reserve.svg);
   }
 
   &.m-consult::before {
-    background-image: url(../images/icon-consult.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-consult.svg);
   }
 
   &::after {
     width: liquid(14);
-    background-image: url(../images/icon-right-arrow.svg);
+    background-image: url(https://www.yoshijibika.com/wp-content/uploads/2024/08/icon-right-arrow.svg);
   }
 
   @include mq() {

@@ -9,7 +9,7 @@
 :root {
   // コンテンツ幅
   --contents-pc: min(calc(100% - #{pxToRem(48)}), #{pxToRem(1100)});
-  --contents-sp: min(100%, #{pxToRem(345)});
+  --contents-sp: min(100%, #{pxToRem(400)});
 
   // PC版とスマホ版のベース文字サイズ
   // PC版 最小値: SP版デザインへのブレークポイント,　最大値:コンテンツ幅
